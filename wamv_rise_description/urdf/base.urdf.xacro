@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot name="wamv_rise" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+    <link name="nose_tip_link">
+        <!-- <visual>
+            <origin xyz="00.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://alpha_rise_description/mesh/alpha_rise_rviz.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual> -->
+    </link>
+
+    
+    <link name="base_link"/>
+    <joint name="base_link" type="fixed">
+        <origin xyz="-0.7 0.0 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="base_link"/>
+    </joint>
+
+    <!-- <link name="cg_link"/>
+    <joint name="cg_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="cg_link"/>
+    </joint> -->
+
+    <link name="imu"/>
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.1415926"/>
+        <parent link="base_link"/>
+        <child link="imu"/>
+    </joint>
+
+    <!-- <link name="imu_sf"/>
+    <joint name="imu__sf_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="imu"/>
+        <child link="imu_sf"/>
+    </joint> -->
+
+    <!-- <link name="dvl"/>
+    <joint name="dvl_joint" type="fixed">
+        <origin xyz="0.51 0.0 -0.1" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="dvl"/>
+    </joint> -->
+
+     <!-- <link name="dvl_sf"/>
+    <joint name="dvl_sf_joint" type="fixed">
+        <origin xyz="0.51 0.0 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="dvl_sf"/>
+    </joint> -->
+
+    <link name="gps"/>
+    <joint name="gps_joint" type="fixed">
+        <origin xyz="-0.5 0.0 0.3" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="gps"/>
+    </joint>
+
+    <!-- <link name="pressure"/>
+    <joint name="pressure_joint" type="fixed">
+        <origin xyz="0.3 0.0 0.05" rpy="3.1415926 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="pressure"/>
+    </joint> -->
+
+    <!-- perception sensors -->
+    <link name="livox_frame"/>
+    <joint name="livox_joint" type="fixed">
+        <origin xyz="-0.2 0.0 0.0" rpy="0.0 0.0 -1.5717"/>
+        <parent link="nose_tip_link"/>
+        <child link="livox_frame"/>
+    </joint>
+
+    <link name="velodyne"/>
+    <joint name="velodyne_joint" type="fixed">
+        <origin xyz="-0.25 0.0 0.05" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="velodyne"/>
+    </joint>
+
+    <link name="norbit"/>
+    <joint name="norbit_joint" type="fixed">
+        <origin xyz="-1.5 0.0 -0.5" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="norbit"/>
+    </joint>
+
+   
+</robot>

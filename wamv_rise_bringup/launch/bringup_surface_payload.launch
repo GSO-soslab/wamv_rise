@@ -12,6 +12,10 @@
 
   <arg name="robot_name" default="wamv_rise"/>
     
+    <include file="$(find wamv_rise_bringup)/launch/include/velodyne_test.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> 
+
 
     <!-- Bring up Livox  -->
     <include file="$(find wamv_rise_bringup)/launch/include/livox.launch.xml">
@@ -19,9 +23,9 @@
     </include> 
 
     <!-- Bring up velodyne-->
-    <include file="$(find wamv_rise_bringup)/launch/include/velodyne.launch.xml">
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/velodyne.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> 
+    </include>  -->
 
      <!-- Bring up xsens-->
      <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">

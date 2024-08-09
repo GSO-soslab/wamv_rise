@@ -1,0 +1,16 @@
+device_ip: 192.168.2.122
+# frame_id: velodyne
+# manager: velodyne_nodelet_manager
+model: VLP16
+# pcap: 
+port: 2368
+read_fast: false
+read_once: false
+repeat_delay: 0.0
+rpm: 600.0
+gps_time: false
+pcap_time: false
+cut_angle: -0.01
+timestamp_first_packet: false
+diagnostic_frequency_tolerance: 0.1
+  

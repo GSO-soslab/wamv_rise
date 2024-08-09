@@ -7,7 +7,7 @@
     <!-- declare arguments with default values -->
     <arg name="calibration" default="$(find velodyne_pointcloud)/params/VLP16db.yaml"/>
     <arg name="device_ip" default="192.168.2.122" />
-    <arg name="frame_id" default=" $(arg robot_name)/velodyne" />
+    <arg name="frame_id" default="velodyne" />
     <arg name="manager" default="$(arg frame_id)_nodelet_manager" />
     <arg name="max_range" default="130.0" />
     <arg name="min_range" default="0.4" />
@@ -28,7 +28,8 @@
     <!-- start nodelet manager and driver nodelets -->
     <include file="$(find velodyne_driver)/launch/nodelet_manager.launch">
         <arg name="device_ip" value="$(arg device_ip)"/>
-        <arg name="frame_id" value="$(arg frame_id)"/>
+        <arg name="frame_id" value="wamv_rise/$(arg frame_id)"/>
+        <!-- <arg name="frame_id" value="$(arg frame_id)"/> -->
         <arg name="manager" value="$(arg manager)" />
         <arg name="model" value="VLP16"/>
         <arg name="pcap" value="$(arg pcap)"/>
@@ -41,6 +42,9 @@
         <arg name="pcap_time" value="$(arg pcap_time)"/>
         <arg name="cut_angle" value="$(arg cut_angle)"/>
         <arg name="timestamp_first_packet" value="$(arg timestamp_first_packet)"/>
+
+        <remap from="velodyne_points" to="wamv_rise/velodyne_points"/>
+        <remap from="scan" to="wamv_rise/scan"/>        
     </include>
 
     <!-- start transform nodelet -->
@@ -53,6 +57,9 @@
         <arg name="max_range" value="$(arg max_range)"/>
         <arg name="min_range" value="$(arg min_range)"/>
         <arg name="organize_cloud" value="$(arg organize_cloud)"/>
+
+        <remap from="velodyne_points" to="wamv_rise/velodyne_points"/>
+        <remap from="scan" to="wamv_rise/scan"/>
     </include>
 
     <!-- start laserscan nodelet -->
@@ -60,6 +67,9 @@
         <arg name="manager" value="$(arg manager)" />
         <arg name="ring" value="$(arg laserscan_ring)"/>
         <arg name="resolution" value="$(arg laserscan_resolution)"/>
+
+        <remap from="velodyne_points" to="wamv_rise/velodyne_points"/>
+        <remap from="scan" to="wamv_rise/scan"/>
     </include>
 
 </launch>
