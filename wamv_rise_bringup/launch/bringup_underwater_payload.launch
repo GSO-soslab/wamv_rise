@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of wamv rise payload 
+
+    Author: Mingxi Zhou
+    Email: mzhou@uri.edu
+    Year: 2024
+
+    Copyright (C) 2022-2024 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+  <arg name="robot_name" default="wamv_rise"/>
+    
+
+    <!-- Bring up Livox  -->
+    <include file="$(find wamv_rise_bringup)/launch/include/norbit.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> 
+
+</launch>
