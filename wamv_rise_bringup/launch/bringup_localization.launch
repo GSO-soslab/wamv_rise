@@ -18,8 +18,8 @@
     </include>
 
     <!-- Bring up the Localization Solution -->
-    <!-- <include file="$(find alpha_rise_bringup)/launch/include/localization.launch.xml">
+    <include file="$(find wamv_rise_bringup)/launch/include/localization.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
 </launch>

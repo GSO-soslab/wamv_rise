@@ -37,6 +37,6 @@
 	      output="screen" args="$(arg cmdline_arg)" >
 
 		  <remap from="/livox/lidar" to="wamv_rise/livox/lidar"/>
-</node>
+	</node>
 
 </launch>

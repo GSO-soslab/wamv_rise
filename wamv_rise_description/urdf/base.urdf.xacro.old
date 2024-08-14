@@ -6,7 +6,7 @@
 
     <link name="nose_tip_link"/>
     <joint name="nose_tip_joint" type="fixed">
-        <origin xyz="1.11 -0.06 0.16" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.7 0.0 0.1" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="nose_tip_link"/>
     </joint>
@@ -48,7 +48,7 @@
 
     <link name="gps"/>
     <joint name="gps_joint" type="fixed">
-        <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
+        <origin xyz="-0.5 0.0 0.3" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="gps"/>
     </joint>
@@ -61,6 +61,12 @@
     </joint> -->
 
     <!-- perception sensors -->
+    <link name="livox_frame"/>
+    <joint name="livox_joint" type="fixed">
+        <origin xyz="-0.2 0.0 0.0" rpy="0.0 0.0 -1.5717"/>
+        <parent link="nose_tip_link"/>
+        <child link="livox_frame"/>
+    </joint>
 
     <link name="velodyne"/>
     <joint name="velodyne_joint" type="fixed">
@@ -69,19 +75,12 @@
         <child link="velodyne"/>
     </joint>
 
-    <link name="livox_frame"/>
-    <joint name="livox_joint" type="fixed">
-        <origin xyz="0.15 0.01 0.0" rpy="0.0 0.0 -1.554247"/>
-        <parent link="velodyne"/>
-        <child link="livox_frame"/>
-    </joint>
-
-
     <link name="norbit"/>
     <joint name="norbit_joint" type="fixed">
-        <origin xyz="-1.21435 -0.096718 -0.909" rpy="2.094395 0.0 0.0"/>
+        <origin xyz="-1.5 0.0 -0.5" rpy="0.0 0.0 0.0"/>
         <parent link="nose_tip_link"/>
         <child link="norbit"/>
     </joint>
 
+   
 </robot>

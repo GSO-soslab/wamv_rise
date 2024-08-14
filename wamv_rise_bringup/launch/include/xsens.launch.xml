@@ -12,10 +12,14 @@
 
     <arg name="robot_name" default="changeme"/>
 
-    <node ns="$(arg robot_name)" name="xsens_mti_node" pkg="xsens_mti_driver" 
-          type="xsens_mti_node" output="screen">
+    <node ns="$(arg robot_name)" name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" output="screen">
         <rosparam command="load" file="$(find wamv_rise_config)/config/xsens_imu.yaml" />
         <param name="frame_id" value="$(arg robot_name)/imu"/>
+
+        <remap from="gnss" to="gps/fix"/>
+
+        <remap from="filter/euler" to="xsens/euler"/>
+        <remap from="filter/twist" to="xsens/twist"/>
     </node>
 
 </launch>
