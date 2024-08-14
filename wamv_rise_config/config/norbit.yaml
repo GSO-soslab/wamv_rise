@@ -13,7 +13,7 @@ cmd_timeout:        0.5                     # how long should you wait for a com
 startup_settings:                           # the norbit settings to be applied at startup (see doc/*DFD_external.pdf)
     set_power:        "1"
     set_gate_mode:    "1"
-    set_range:        ".5 30"
+    set_range:        ".5 20"
     set_time_source:  "1"                    # 0: IRIG-B 1:NTP 2: IRIG-B (inverted) 3: NTP+PPS(pos) 4: NTP+PPS(neg) 5: ZDA+PPS(pos) 6:ZDA+PPS(neg) 7:ZDA 8:Free run (time since startup)
     #set_ntp_server:   "timepi.aura"
 

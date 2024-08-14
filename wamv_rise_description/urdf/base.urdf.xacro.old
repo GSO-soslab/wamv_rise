@@ -77,7 +77,7 @@
 
     <link name="norbit"/>
     <joint name="norbit_joint" type="fixed">
-        <origin xyz="-1.5 0.0 -0.5" rpy="0.0 0.0 0.0"/>
+        <origin xyz="-1.21435 -0.096718 -0.909" rpy="2.094395 0.0 0.0"/>        
         <parent link="nose_tip_link"/>
         <child link="norbit"/>
     </joint>

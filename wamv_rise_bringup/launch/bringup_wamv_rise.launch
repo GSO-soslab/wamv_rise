@@ -13,9 +13,9 @@
     <arg name="robot_name" default="wamv_rise"/>
 
     <!-- Bring up the surface playload  -->
-    <!-- <include file="$(find wamv_rise_bringup)/launch/bringup_surface_payload.launch">
+    <include file="$(find wamv_rise_bringup)/launch/bringup_surface_payload.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
     <!-- Bring up the underwater playload  -->
     <include file="$(find wamv_rise_bringup)/launch/bringup_underwater_payload.launch">
@@ -23,9 +23,9 @@
     </include>
 
     <!-- Bring up the localizaion  -->
-    <!-- <include file="$(find wamv_rise_bringup)/launch/bringup_localization.launch">
+    <include file="$(find wamv_rise_bringup)/launch/bringup_localization.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
 
 </launch>
