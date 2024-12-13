@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of Iceberge Mapping project.
+
+    Author: Mingxi Zhou, Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2024
+
+    Copyright (C) 2024 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+    <arg name="robot_name" default="wamv_rise"/>
+
+    <!-- Bring up xsens-->
+    <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="1.0"/>
+    </include> 
+
+    <!-- Bring up rtk gps -->
+    <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="3.0"/>
+    </include> 
+
+    <!-- Bring up torqeedo motor -->
+    <include file="$(find wamv_rise_bringup)/launch/include/torqeedo_motors.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="5.0"/>
+    </include> 
+
+    <!-- Bring up vehicle joy -->
+    <include file="$(find wamv_rise_bringup)/launch/include/vehicle_joy.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="7.0"/>
+    </include> 
+
+    <!-- Bring up DVL -->
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/nortek_dvl_ethernet.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>  -->
+
+    <!-- Bring up wind sensor -->
+
+
+</launch>

@@ -11,8 +11,10 @@
 <launch>
 
     <arg name="robot_name" default="changeme"/>
+    <arg name="delay" default="1.0" />
 
-    <node ns="$(arg robot_name)" name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" output="screen">
+    <node ns="$(arg robot_name)" name="xsens_mti_node" pkg="xsens_mti_driver" 
+          type="xsens_mti_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
         <rosparam command="load" file="$(find wamv_rise_config)/config/xsens_imu.yaml" />
         <param name="frame_id" value="$(arg robot_name)/imu"/>
 

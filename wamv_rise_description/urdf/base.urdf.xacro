@@ -25,12 +25,19 @@
         <child link="imu"/>
     </joint>
 
-    <!-- <link name="imu_sf"/>
-    <joint name="imu__sf_joint" type="fixed">
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <parent link="imu"/>
-        <child link="imu_sf"/>
-    </joint> -->
+    <link name="gps"/>
+    <joint name="gps_joint" type="fixed">
+        <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="gps"/>
+    </joint>
+
+    <!-- <link name="rtk_gps"/>
+    <joint name="rtk_gps_joint" type="fixed">
+        <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="gps"/>
+    </joint>     -->
 
     <!-- <link name="dvl"/>
     <joint name="dvl_joint" type="fixed">
@@ -38,20 +45,6 @@
         <parent link="base_link"/>
         <child link="dvl"/>
     </joint> -->
-
-     <!-- <link name="dvl_sf"/>
-    <joint name="dvl_sf_joint" type="fixed">
-        <origin xyz="0.51 0.0 -0.1" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
-        <child link="dvl_sf"/>
-    </joint> -->
-
-    <link name="gps"/>
-    <joint name="gps_joint" type="fixed">
-        <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
-        <child link="gps"/>
-    </joint>
 
     <!-- <link name="pressure"/>
     <joint name="pressure_joint" type="fixed">
@@ -83,5 +76,21 @@
         <parent link="nose_tip_link"/>
         <child link="norbit"/>
     </joint>
+
+    <!-- sf sim sensors -->
+
+    <!-- <link name="imu_sf"/>
+    <joint name="imu__sf_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="imu"/>
+        <child link="imu_sf"/>
+    </joint> -->
+
+     <!-- <link name="dvl_sf"/>
+    <joint name="dvl_sf_joint" type="fixed">
+        <origin xyz="0.51 0.0 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="dvl_sf"/>
+    </joint> -->
 
 </robot>

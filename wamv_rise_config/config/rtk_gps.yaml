@@ -1,0 +1,8 @@
+# The usb device for unicore gps
+device: /dev/rtk_gps
+# device: /dev/ttyUSB3
+baudrate: 115200
+
+# True: use the gps timestamp, False: use IO time when gps message arrived
+use_gnss_time: False
+

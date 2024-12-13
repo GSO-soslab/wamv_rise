@@ -1,30 +1,33 @@
 <?xml version="1.0"?>
 <!--
-    This file is part of wamv rise payload 
+    This file is part of Iceberge Mapping project.
 
-    Author: Mingxi Zhou
-    Email: mzhou@uri.edu
+    Author: Mingxi Zhou, Lin Zhao
+    Email: linzhao@uri.edu
     Year: 2024
 
-    Copyright (C) 2022-2024 Smart Ocean Systems Laboratory
+    Copyright (C) 2024 Smart Ocean Systems Laboratory
 -->
 <launch>
 
     <arg name="robot_name" default="wamv_rise"/>
 
-    <!-- Bring up Livox  -->
+    <!-- Bring up Livox -->
     <include file="$(find wamv_rise_bringup)/launch/include/livox.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include> 
 
-    <!-- Bring up velodyne-->
+    <!-- Bring up Velodyne-16 -->
     <include file="$(find wamv_rise_bringup)/launch/include/velodyne_test.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include> 
 
-     <!-- Bring up xsens-->
-     <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
+    <!-- Bring up Norbit -->
+    <include file="$(find wamv_rise_bringup)/launch/include/norbit.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include> 
+
+    <!-- Bring up Camera ? -->
+
 
 </launch>
