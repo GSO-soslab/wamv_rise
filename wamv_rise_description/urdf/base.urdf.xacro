@@ -93,4 +93,18 @@
         <child link="dvl_sf"/>
     </joint> -->
 
+    <link name="port_thruster_link"/>
+    <joint name="port_thruster_joint" type="fixed">
+        <origin xyz="-0.77 0.5 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="port_thruster_link"/>
+    </joint>
+
+    <link name="starboard_thruster_link"/>
+    <joint name="starboard_thruster_joint" type="fixed">
+        <origin xyz="-0.77 -0.5 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="starboard_thruster_link"/>
+    </joint>
+
 </robot>
