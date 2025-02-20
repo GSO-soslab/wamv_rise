@@ -11,11 +11,15 @@
 <launch>
 
     <arg name="robot_name" default="changeme"/>
+    <arg name="sensor_name" default="dvl"/>
 
-    <node ns="robot_name" pkg="nortek_dvl_ethernet" type="nortek_dvl_ethernet_node" 
+    <node ns="$(arg robot_name)/$(arg sensor_name)" pkg="nortek_dvl_ethernet" type="nortek_dvl_ethernet_node" 
             name="nortek_dvl_ethernet_node" output="screen">
 
         <rosparam command="load" file="$(find wamv_rise_config)/config/nortek_dvl_ethernet.yaml"/>
+
+        <param name="ROS/sensor_frame_id" value="$(arg robot_name)/nortek_dvl"/>
+        <param name="ROS/world_frame_id" value="$(arg robot_name)/world"/>
     </node>
 
 </launch>

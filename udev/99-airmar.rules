@@ -1,0 +1,2 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="d9a9", ATTRS{serial}=="28EA9", SYMLINK+="airmar"
+

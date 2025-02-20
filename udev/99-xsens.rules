@@ -1,0 +1,2 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2639", ATTRS{idProduct}=="0301", ATTRS{serial}=="DB8IQNXO", SYMLINK+="xsens_ahrs"
+
