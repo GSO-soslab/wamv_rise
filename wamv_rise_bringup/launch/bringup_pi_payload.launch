@@ -19,10 +19,10 @@
     </include> 
 
     <!-- Bring up rtk gps -->
-    <!-- <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
+    <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="delay" value="3.0"/>
-    </include>  -->
+    </include>     
 
     <!-- Bring up torqeedo motor -->
     <!-- <include file="$(find wamv_rise_bringup)/launch/include/torqeedo_motors.launch.xml">
@@ -43,10 +43,5 @@
 
     <!-- Bring up wind sensor -->
 
-
-    <!-- Bring up the system TF  -->
-    <include file="$(find wamv_rise_bringup)/launch/include/description.launch.xml">
-        <arg name="robot_name" value="$(arg robot_name)"/>
-    </include>
 
 </launch>

@@ -32,6 +32,13 @@
         <child link="gps"/>
     </joint>
 
+    <link name="unicore_gps"/>
+    <joint name="unicore_gps_joint" type="fixed">
+        <origin xyz="0.26 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="gps"/>
+        <child link="unicore_gps"/>
+    </joint>
+
     <!-- <link name="rtk_gps"/>
     <joint name="rtk_gps_joint" type="fixed">
         <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
@@ -76,6 +83,13 @@
         <parent link="nose_tip_link"/>
         <child link="norbit"/>
     </joint>
+
+    <link name="usbl"/>
+    <joint name="usbl_joint" type="fixed">
+        <origin xyz="-1.21435 -0.096718 -0.909" rpy="0.0 0.0 0.78539815"/>
+        <parent link="nose_tip_link"/>
+        <child link="usbl"/>
+    </joint>    
 
     <!-- sf sim sensors -->
 

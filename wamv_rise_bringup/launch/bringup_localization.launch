@@ -12,6 +12,11 @@
 
     <arg name="robot_name" default="wamv_rise"/>
 
+    <!-- Bring up the system TF  -->
+    <include file="$(find wamv_rise_bringup)/launch/include/description.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include>
+    
     <!-- Bring up the Localization Solution -->
     <include file="$(find wamv_rise_bringup)/launch/include/localization.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>

@@ -76,20 +76,29 @@
         <param name="odom1_differential" value="false"/>
         <param name="odom1_relative" value="false"/>
 
-    </node>
+        <param name="odom2" value="unicore/heading_odometry"/>
+        <rosparam param="odom2_config">
+        [false, false,  false,
+         false, false, true,
+         false, false, false,
+         false, false, false,
+         false, false, false]
+        </rosparam>
+        <param name="odom2_queue_size" value="10"/>
+        <param name="odom2_nodelay" value="true"/>
+        <param name="odom2_differential" value="false"/>
+        <param name="odom2_relative" value="false"/>
 
-    <!-- <node ns="$(arg robot_name)" name="depth_odometry_publisher" pkg="mvp_localization_utilities" type="depth_odometry_publisher" output="screen">
-        <param name="frame_id" value="$(arg robot_name)/world"/>
-        <remap from="depth" to="bar30/depth"/>
-    </node> -->
+    </node>
     
-    <node ns="$(arg robot_name)" pkg="mvp_localization_utilities" type="world_odom_transform_node" name="world_odom_transform_node" output="screen">
+    <node ns="$(arg robot_name)" pkg="mvp_localization_utilities" type="world_odom_transform_node" 
+          name="world_odom_transform_node" output="screen">
         <param name = "tf_prefix" value="$(arg robot_name)"/>
         <param name = "acceptable_var" value = "5" />
         <param name = "m_gps_wait_time" value ="30"/>
         <param name = "datum_latitude" value="41.4904437"/>
         <param name = "datum_longitude" value="-71.4231766"/>
-        <!-- <param name = "mag_declination_auto" value="false"/> -->
+        <param name = "mag_declination_auto" value="false"/>
         <!-- use gps altitude for tf -->
         <param name = "use_depth_for_tf" value="true"/>
         <param name = "position_accuracy" value="3.0"/>

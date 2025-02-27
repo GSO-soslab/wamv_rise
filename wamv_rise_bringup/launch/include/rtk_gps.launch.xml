@@ -18,6 +18,10 @@
           name="unicore_rtk_driver" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
           
         <rosparam command="load" file="$(find wamv_rise_config)/config/rtk_gps.yaml"/>
+
+        <param name="gps_frame_id" value="$(arg robot_name)/unicore_gps"/>
+        <param name="heading_frame_id" value="$(arg robot_name)/world_ned"/>
+
     </node>
 
 </launch>
