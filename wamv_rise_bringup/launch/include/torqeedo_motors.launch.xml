@@ -22,21 +22,23 @@
     <group ns="$(arg robot_name)" >
 
         <node ns="torqeedo_port" pkg="torqeedo_motor" type="torqeedo_motor_node" 
-                name="port_torqeedo_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+                name="port_torqeedo_node" output="screen" 
+                launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
                 <rosparam command="load" file="$(arg port_config)"/>
 
                 <remap from="control/speed_mode"        to="/wamv_rise/joy_mode"/>
-                <remap from="control/joy_speed"        to="/wamv_rise/port_thruster"/>
-                <!-- <remap from="control/controller_speed" to="/rf_controller_port"/> -->
+                <remap from="control/joy_speed"        to="/wamv_rise/manual_port_thruster"/>
+                <remap from="control/controller_speed" to="/wamv_rise/port_thruster"/>
         </node>
 
         <node ns="torqeedo_starboard" pkg="torqeedo_motor" type="torqeedo_motor_node" 
-                name="starboard_torqeedo_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+                name="starboard_torqeedo_node" output="screen" 
+                launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
                 <rosparam command="load" file="$(arg starboard_config)"/>
 
                 <remap from="control/speed_mode"        to="/wamv_rise/joy_mode"/>
-                <remap from="control/joy_speed"        to="/wamv_rise/starboard_thruster"/>
-                <!-- <remap from="/control/controller_speed" to="/rf_controller_starboard"/> -->
+                <remap from="control/joy_speed"        to="/wamv_rise/manual_starboard_thruster"/>
+                <remap from="control/controller_speed" to="/wamv_rise/starboard_thruster"/>
         </node>
 
     </group>

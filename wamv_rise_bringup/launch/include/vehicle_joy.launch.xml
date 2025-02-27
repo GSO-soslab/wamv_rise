@@ -15,8 +15,12 @@
 
     <node ns="$(arg robot_name)" pkg="wamv_rf_joy" type="rf_joy_vehicle_node.py" 
           name="vehicle_joy" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
-      <param name="serial_port" value="/dev/holybro_rf"/>
-      <param name="baud_rate" value="115200" />
+      <param name="serial_port"    value="/dev/holybro_rf"/>
+      <param name="baud_rate"      value="115200" />
+
+      <remap from="port_thruster"  to="manual_port_thruster"/>
+      <remap from="starboard_thruster"  to="manual_starboard_thruster"/>
+      <remap from="vehicle_joy"  to="helm/teleop/joy"/>
     </node>
 
 </launch>
