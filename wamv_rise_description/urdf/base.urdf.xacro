@@ -86,7 +86,7 @@
 
     <link name="usbl"/>
     <joint name="usbl_joint" type="fixed">
-        <origin xyz="-1.21435 -0.096718 -0.909" rpy="0.0 0.0 0.78539815"/>
+        <origin xyz="-1.21435 -0.096718 -0.909" rpy="0.0 0.0 1.221730456"/>
         <parent link="nose_tip_link"/>
         <child link="usbl"/>
     </joint>    
