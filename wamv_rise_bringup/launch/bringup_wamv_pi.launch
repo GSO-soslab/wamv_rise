@@ -23,8 +23,8 @@
     </include>
 
     <!-- Bring up the MVP  -->
-    <!-- <include file="$(find wamv_rise_bringup)/launch/bringup_mvp.launch">
+    <include file="$(find wamv_rise_bringup)/launch/bringup_mvp.launch">
         <arg name="robot_name" value="$(arg robot_name)"/>
-    </include> -->
+    </include>
 
 </launch>

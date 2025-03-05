@@ -13,9 +13,21 @@
     <arg name="robot_name" default="wamv_rise"/>
 
     <!-- Bring up rtk gps -->
-    <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="delay" value="1.0"/>
-    </include>     
+    </include>      -->
+
+    <!-- Bring up xsens-->
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="1.0"/>
+    </include>  -->
+
+    <!-- Bring up airmar weatherstation -->
+    <include file="$(find wamv_rise_bringup)/launch/include/airmar.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="1.0"/>
+    </include> 
 
 </launch>

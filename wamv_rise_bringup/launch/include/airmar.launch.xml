@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of ALPHA AUV project.
+
+    Author: Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2023
+
+    Copyright (C) 2022-2023 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+
+    <arg name="robot_name" default="changeme"/>
+    <arg name="delay" default="1.0" />
+
+    <node ns="$(arg robot_name)" pkg="airmar_weatherstation" type="driver_node.py"
+          name="airmar_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+          
+        <rosparam command="load" file="$(find wamv_rise_config)/config/airmar.yaml"/>
+        <!-- <param name="frame_id" value="$(arg robot_name)/airmar"/> -->
+    </node>
+
+
+</launch>
+

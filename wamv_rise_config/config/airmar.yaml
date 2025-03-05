@@ -1,0 +1,8 @@
+# The usb device for unicore gps
+device: /dev/airmar
+# device: /dev/ttyUSB5
+baudrate: 4800
+
+# True: use the gps timestamp, False: use IO time when gps message arrived
+use_gnss_time: False
+

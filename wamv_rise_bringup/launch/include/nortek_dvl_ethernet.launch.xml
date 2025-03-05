@@ -12,9 +12,10 @@
 
     <arg name="robot_name" default="changeme"/>
     <arg name="sensor_name" default="dvl"/>
+    <arg name="delay" default="1.0" />
 
     <node ns="$(arg robot_name)/$(arg sensor_name)" pkg="nortek_dvl_ethernet" type="nortek_dvl_ethernet_node" 
-            name="nortek_dvl_ethernet_node" output="screen">
+            name="nortek_dvl_ethernet_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
 
         <rosparam command="load" file="$(find wamv_rise_config)/config/nortek_dvl_ethernet.yaml"/>
 
