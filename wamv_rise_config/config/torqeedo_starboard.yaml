@@ -12,7 +12,7 @@ Motor:
 
 System:
   safety_timeout: 2
-  scale: 0.1
+  scale: 0.4
 
 ROS:
   frame_id: torqeedo_starboard

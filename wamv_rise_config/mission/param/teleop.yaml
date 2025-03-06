@@ -14,8 +14,8 @@ local_link: wamv_rise/cg_link
 max_z: 10
 max_roll: 1.5707963 
 max_pitch: 1.5707963
-max_surge: 0.8
-max_sway: 0.8
+max_surge: 1.5
+max_sway: 1.5
 
 ####tele-op, ang in degrees####
 ##left up/down controls surge

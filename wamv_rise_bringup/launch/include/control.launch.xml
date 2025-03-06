@@ -18,7 +18,7 @@
 
     <!-- For the real vehicle -->
     <group if="$(eval arg('is_sim') == false)">
-        <node ns="$(arg robot_name)" pkg="mvp_control" type="mvp_control_ros_node" name="alpha_control" 
+        <node ns="$(arg robot_name)" pkg="mvp_control" type="mvp_control_ros_node" name="wamv_control" 
               output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'" >
             <rosparam command="load" file="$(find wamv_rise_config)/config/control.yaml"/>
             <param name="tf_prefix" value="$(arg robot_name)"/>
