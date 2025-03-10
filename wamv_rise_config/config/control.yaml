@@ -58,15 +58,18 @@ thruster_force_topics:
 # Array would hold the lower degrees in lower indexes. Shown below:
 # [a_0, a_1, ... ,a_(n-1), a(n)]
 #   f(x) = a5*x^5 + a4*x^4 + a3*x^3 + a2*x^2 + a1*x + a0
-
 thruster_polynomials:
   # T = 0.0014*RPM^2 = 1400*command^2 [-1, 1]
   # port:        [0.0, 0.0, 1400.0]
   # starboard:     [0.0, 0.0, 1400.0]
-  port:        [0.0, 200.0]
-  starboard:     [0.0, 200.0]
-
+  # port:        [0.0, 200.0]
+  # starboard:     [0.0, 200.0]
   
+  # f(x) = 1015.8 *x^3 + 0*x^2 + 439.65*x
+  port:      [0.0, 439.65, 0.0, 1015.8]
+  starboard: [0.0, 439.65, 0.0, 1015.8]
+  
+
 ## Force limits
 ## T200 limit is +-25 N beyond that will cause nan solution in QP
 thruster_limits:
