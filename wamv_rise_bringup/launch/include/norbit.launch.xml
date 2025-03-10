@@ -13,7 +13,7 @@
 <launch>
 
     <arg name="robot_name"   default="changeme"/>
-    <arg name="ip"           default="192.168.2.179"/>
+    <arg name="ip"           default="192.168.3.179"/>
     <arg name="sensor_frame" default= "$(arg robot_name)/norbit"/>
 
     <node ns="$(arg robot_name)/norbit" name="norbit_node" pkg="norbit"
