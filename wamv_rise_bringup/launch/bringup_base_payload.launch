@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="robot_name" default="base"/>
+
+    <!-- Bring up base rf-->
+    <include file="$(find wamv_rf_joy)/launch/bringup_base_joy.launch">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+    </include> 
+</launch>
