@@ -18,7 +18,7 @@
           name="airmar_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
           
         <rosparam command="load" file="$(find wamv_rise_config)/config/airmar.yaml"/>
-        <!-- <param name="frame_id" value="$(arg robot_name)/airmar"/> -->
+        <param name="frame_id" value="$(arg robot_name)/airmar"/>
     </node>
 
 

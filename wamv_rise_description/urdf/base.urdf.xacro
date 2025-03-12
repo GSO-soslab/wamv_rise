@@ -48,8 +48,8 @@
 
     <link name="nortek_dvl"/>
     <joint name="dvl_joint" type="fixed">
-        <!-- <origin xyz="-1.21435 -0.096718 -0.909" rpy="0.0 0.0 0.0"/> -->
-        <origin xyz="-1.21435 0.10 -0.909" rpy="0.0 0.0 0.0"/>
+        <!-- <origin xyz="-1.21435 0.10 -0.909" rpy="0.0 0.0 0.0"/> -->
+        <origin xyz="-1.4352 0.0375 -0.909" rpy="3.1415926 0.0 -1.5707963"/>
         <parent link="nose_tip_link"/>
         <child link="nortek_dvl"/>
     </joint>

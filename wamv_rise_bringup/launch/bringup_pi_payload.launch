@@ -12,28 +12,33 @@
 
     <arg name="robot_name" default="wamv_rise"/>
 
+    <!-- Bring up foxglove -->
+    <include file="$(find wamv_rise_bringup)/launch/include/foxglove.launch.xml">
+        <!-- <arg name="robot_name" value="$(arg robot_name)"/> -->
+    </include> 
+
     <!-- Bring up xsens-->
     <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="1.0"/>
+        <arg name="delay" value="2.0"/>
     </include> 
 
     <!-- Bring up rtk gps -->
     <include file="$(find wamv_rise_bringup)/launch/include/rtk_gps.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="3.0"/>
+        <arg name="delay" value="4.0"/>
     </include>     
 
     <!-- Bring up DVL -->
     <include file="$(find wamv_rise_bringup)/launch/include/nortek_dvl_ethernet.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="5.0"/>
+        <arg name="delay" value="6.0"/>
     </include> 
 
-    <!-- Bring up wind sensor -->
+    <!-- Bring up airmar wind sensor -->
     <include file="$(find wamv_rise_bringup)/launch/include/airmar.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="7.0"/>
+        <arg name="delay" value="8.0"/>
     </include> 
 
 </launch>

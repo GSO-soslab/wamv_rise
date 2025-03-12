@@ -12,10 +12,9 @@
 
     <arg name="robot_name" default="wamv_rise"/>
 
-    <!-- Bring up torqeedo motor -->
-    <include file="$(find wamv_rise_bringup)/launch/include/torqeedo_motors.launch.xml">
-        <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="5.0"/>
+    <!-- Bring up airmar weatherstation -->
+    <include file="$(find wamv_rise_bringup)/launch/include/foxglove.launch.xml">
+        <!-- <arg name="robot_name" value="$(arg robot_name)"/> -->
     </include> 
 
 </launch>

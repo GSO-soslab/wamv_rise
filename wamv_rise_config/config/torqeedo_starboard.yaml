@@ -12,6 +12,7 @@ Motor:
 
 System:
   safety_timeout: 2
+  # Brief: default value is 0.4 tested in salt pond
   scale: 0.4
 
 ROS:
