@@ -1,5 +1,17 @@
 # WAMV configuration for [RISE project](https://soslab.wordpress.com/rise/)
 
+## Time sync: gpsd + chrony
+```sh
+# check gpsd
+cgps -s
+# check chrony
+watch -n -0.1 chronyc sources -v
+```
+
+## Livox
+```sh
+sudo ptpd -M -i eth2 -C
+```
 
 ## Norbit:
 
@@ -32,3 +44,17 @@ sudo systemctl restart isc-dhcp-server
 # check the failed reason
 sudo journalctl -u isc-dhcp-server --no-pager | tail -30
 ``` 
+3) NTP time sync
+```sh
+# rosservice method after roslaunch driver
+rosservice call /wamv_rise/norbit/norbit_node/norbit_cmd "cmd: 'set_ntp_server'
+val: '192.168.3.90'"
+# telnet method
+telnet 192.168.3.179 2209
+# set 
+set_ntp_server 192.168.3.90
+# check
+ntp_log
+# exit
+ctrl + ] quit
+```

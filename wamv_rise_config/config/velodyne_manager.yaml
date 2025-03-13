@@ -1,4 +1,5 @@
-device_ip: 192.168.2.122
+# device_ip: 192.168.2.122
+device_ip: 192.168.4.122
 # frame_id: velodyne
 # manager: velodyne_nodelet_manager
 model: VLP16

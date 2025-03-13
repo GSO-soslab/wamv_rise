@@ -5,7 +5,7 @@
     <arg name="robot_name" default="wamv_rise"/>
 
     <arg name="calibration" default="$(find velodyne_pointcloud)/params/VLP16db.yaml"/>
-    <arg name="manager" default="velodyne_nodelet_manager" />
+    <arg name="manager" default="velodyne_nodelet_manager"/>
 
     <!-- start nodelet manager -->
     <node ns="$(arg robot_name)" pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" output="screen"/>
@@ -14,7 +14,7 @@
     <node ns="$(arg robot_name)" pkg="nodelet" type="nodelet" name="$(arg manager)_driver"
           args="load velodyne_driver/DriverNodelet $(arg manager)" >
 
-          <param name="frame_id" value="wamv_rise/velodyne"/>
+          <param name="frame_id" value="($arg robot_name)/velodyne"/>
 
           <rosparam command="load" file="$(find wamv_rise_config)/config/velodyne_manager.yaml" />
     </node>

@@ -16,7 +16,7 @@
 	<arg name="rviz_enable" default="false"/>
 	<arg name="rosbag_enable" default="false"/>
 	<arg name="cmdline_arg" default="$(arg bd_list)"/>
-	<arg name="msg_frame_id" default="wamv_rise/livox_frame"/>
+	<arg name="msg_frame_id" default="($arg robot_name)/livox_frame"/>
 	<arg name="lidar_bag" default="true"/>
 	<arg name="imu_bag" default="true"/>
 
@@ -36,7 +36,7 @@
 	      type="livox_ros_driver_node" required="true"
 	      output="screen" args="$(arg cmdline_arg)" >
 
-		  <remap from="/livox/lidar" to="wamv_rise/livox/lidar"/>
+		  <remap from="/livox/lidar" to="($arg robot_name)/livox/lidar"/>
 	</node>
 
 </launch>
