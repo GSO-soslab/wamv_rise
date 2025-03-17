@@ -17,8 +17,8 @@ control_modes:
   idle: false
 
   flight:
-    surge:    {p: 100.0,   i: 30.0,   d: 1.0,   pid_max: 300.0, pid_min: -300.0}
-    yaw:      {p: 40.0,   i: 1.0,   d: 5.0,  pid_max: 150.0, pid_min: -150.0}
+    surge:    {p: 100.0,   i: 10.0,   d: 1.0,   pid_max: 550.0, pid_min: -550.0}
+    yaw:      {p: 100.0,   i: 1.0,   d: 25.0,  pid_max: 300.0, pid_min: -300.0}
 
 ##
 # THRUSTERS
@@ -74,8 +74,8 @@ thruster_polynomials:
 ## T200 limit is +-25 N beyond that will cause nan solution in QP
 thruster_limits:
   port:
-    max: 150
-    min: -150
+    max: 400
+    min: -400
   starboard:
-    max: 150
-    min: -150
+    max: 400
+    min: -400
