@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of ALPHA AUV project.
+
+    Author: Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2023
+
+    Copyright (C) 2022-2023 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+
+    <arg name="robot_name" default="changeme"/>
+    <arg name="delay" default="1.0" />
+
+
+    <!-- Bringup the USBL driver -->
+    <node ns="$(arg robot_name)" pkg="evologics_ros" type="evologics_node"
+          name="evologics_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+          
+        <rosparam command="load" file="$(find wamv_rise_config)/config/goby.yaml"/>
+        <rosparam command="load" file="$(find wamv_rise_config)/config/evologics_usbl1.yaml"/>
+
+        <!-- TODO: add robot_name before frame_id ? -->
+        <!-- <param name="frame_id" value="$(arg robot_name)/usbl"/> -->
+    </node>
+
+    <!-- Bringup the USBL-AComm localization -->
+    <node ns="$(arg robot_name)" pkg="mvp_acomm_utilities" type="acomm_geopoint_node" 
+          name="acomms_localization" output="screen">
+
+        <param name = "tf_prefix" value="$(arg robot_name)"/>
+    </node>
+
+</launch>

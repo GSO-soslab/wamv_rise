@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of Iceberge Mapping project.
+
+    Author: Mingxi Zhou, Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2024
+
+    Copyright (C) 2024 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+    <arg name="robot_name" default="wamv_rise"/>
+
+    <!-- Bring up foxglove -->
+    <include file="$(find wamv_rise_bringup)/launch/include/foxglove.launch.xml">
+    </include> 
+
+    <!-- Bring up Power Monitor -->
+    <include file="$(find wamv_rise_bringup)/launch/include/power_monitor.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="1.0"/>
+    </include> 
+
+    <!-- Bring up GPIO manager -->
+    <include file="$(find wamv_rise_bringup)/launch/include/gpio_manager.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" value="2.0"/>
+    </include> 
+    
+</launch>

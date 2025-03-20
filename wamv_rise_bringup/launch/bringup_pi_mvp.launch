@@ -18,7 +18,7 @@
     </include>
     
     <!-- Bring up Helm -->
-    <include file="$(find wamv_rise_bringup)/launch/include/bringup_helm.launch.xml">
+    <include file="$(find wamv_rise_bringup)/launch/include/helm.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
     </include>
 

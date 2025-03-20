@@ -11,12 +11,7 @@
 <launch>
 
     <arg name="robot_name" default="wamv_rise"/>
-
-    <!-- Bring up foxglove -->
-    <include file="$(find wamv_rise_bringup)/launch/include/foxglove.launch.xml">
-        <!-- <arg name="robot_name" value="$(arg robot_name)"/> -->
-    </include> 
-
+    
     <!-- Bring up xsens-->
     <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
@@ -40,5 +35,11 @@
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="delay" value="8.0"/>
     </include> 
+
+    <!-- Bring up acoustic beacon  -->
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/acoustic_beacon.launch.xml">
+        <arg name="robot_name" value="$(arg robot_name)"/>
+        <arg name="delay" default="10.0" />
+    </include>  -->
 
 </launch>

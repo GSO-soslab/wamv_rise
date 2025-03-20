@@ -8,12 +8,13 @@ Serial:
 
 Motor:
   # note: Wiring Pi pin number
-  pin: 23
+  pin: 27
 
 System:
   safety_timeout: 2
-  # Brief: default value is 0.4 tested in salt pond
-  scale: 0.4
+  # Brief: default value for field (e.g., salt pond) is 0.4
+  # Brief: default value for test is 0.1
+  scale: 0.1
 
 ROS:
   frame_id: torqeedo_starboard

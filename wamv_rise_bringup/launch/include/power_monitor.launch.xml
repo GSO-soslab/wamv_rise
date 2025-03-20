@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of ALPHA AUV project.
+
+    Author: Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2023
+
+    Copyright (C) 2022-2023 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+
+    <arg name="robot_name" default="changeme"/>
+    <arg name="delay" default="1.0" />
+
+    <node ns="$(arg robot_name)" pkg="power_monitor" type="power_monitor_node"
+          name="power_monitor_node" output="screen" launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+          
+        <rosparam command="load" file="$(find wamv_rise_config)/config/power_monitor.yaml"/>
+
+        <param name="frame_id" value="$(arg robot_name)/power_minitor"/>
+
+    </node>
+
+</launch>
+
