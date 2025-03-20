@@ -12,7 +12,7 @@ waypoints:
 
 update_topic: update_waypoints
 append_topic: append_waypoints
-surge_velocity: 0.6
+surge_velocity: 1.0
 
 
 state_done: start
@@ -25,11 +25,16 @@ beta_gain: 0.0 # cross-error rate gain
 sigma: 0.00
 
 
-lookahead_adaptive_flag: false
-lookahead_max: 15.0
-lookahead_min: 3.0
+lookahead_adaptive_flag: true
+lookahead_max: 8.0
+lookahead_min: 2.0
 lookahead_gamma: 1.0
 
 
 overshoot_timeout: 600
 acceptance_radius: 3.0
+
+
+surge_velocity: 0.7
+turning_surge_velocity: 0.2
+turning_angle_sector: 0.5
