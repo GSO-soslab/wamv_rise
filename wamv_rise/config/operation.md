@@ -1,30 +1,37 @@
-0) launch base payload: RF
+1) Base: launch base payload (RF)
 ```sh
 cd /home/soslab/Develop/ros/wamv_ws
 source devel/setup.bash
 roslaunch wamv_rise_bringup bringup_base_payload.launch
 ```
 
-1) launch pi payload:
+2) Pi: launch ros manager
+```sh
+roslaunch wamv_rise_bringup bringup_pi_manager.launch 
+```
+
+3) Pi: launch thruster (port and starboard)
+```sh
+roslaunch wamv_rise_bringup bringup_pi_thruster.launch 
+```
+
+4) Pi: launch untilities
+```sh
+roslaunch wamv_rise_bringup bringup_pi_utilities.launch
+```
+
+5) Pi: launch pi payload
 ```sh
 roslaunch wamv_rise_bringup bringup_pi_payload.launch
 # check gps
 cgps -s
 # check chrony
 watch -n -0.1 chronyc sources -v
+# check gps fix
+rostopic echo /wamv_rise/gps/fix
 ```
 
-2) launch thruster:
-```sh
-roslaunch wamv_rise_bringup bringup_pi_thruster.launch 
-```
-
-3) launch untilities:
-```sh
-roslaunch wamv_rise_bringup bringup_pi_utilities.launch
-```
-
-4) open jetson: Jetson, Velodyne, Livox, big router
+6) Pi: open jetson payload power (Jetson, Velodyne, Livox, big router)
 ```sh
 # open Jetson side power: 
 rosservice call /wamv_rise/gpio_manager/set_power_jetson_board "data: true"
@@ -34,7 +41,7 @@ ping 192.168.2.90
 watch -n -0.1 chronyc sources -v
 ```
 
-5) open underwater payload: DVL, USBL, Norbit
+7) Pi: open underwater payload power (DVL, USBL, Norbit)
 ```sh
 # open power
 rosservice call /wamv_rise/gpio_manager/set_power_underwater_payload "data: true"
@@ -48,7 +55,7 @@ ping 192.168.2.109
 rostopic hz /wamv_rise/dvl/bottom_track -c
 ```
 
-6) open Jetson payload: 
+8) Jetson: open Jetson payload
 ```sh
 # launch payload:
 roslaunch wamv_rise_bringup bringup_jetson_payload.launch
@@ -63,7 +70,7 @@ val: '192.168.3.90'"
 rostopic echo /wamv_rise/norbit/cloud/header -c
 ```
 
-7) WAMV navigation:
+9) Pi: WAMV navigation
 ```sh
 # launch localization
 roslaunch wamv_rise_bringup bringup_pi_localization.launch
@@ -71,4 +78,19 @@ roslaunch wamv_rise_bringup bringup_pi_localization.launch
 rosservice call /wamv_rise/world_odom_transform_node/reset_datum "{}"
 # launch mvp
 roslaunch wamv_rise_bringup bringup_pi_mvp.launch 
+```
+
+10) Jetson: shutdown
+```sh
+sudo shutdown -P now
+```
+
+11) Pi: shutdown 
+```sh
+# close underwater payload power
+rosservice call /wamv_rise/gpio_manager/set_power_underwater_payload "data: false"
+# close Jetson payload power
+rosservice call /wamv_rise/gpio_manager/set_power_jetson_board "data: false"
+# shut down pi
+sudo shutdown -P now
 ```
