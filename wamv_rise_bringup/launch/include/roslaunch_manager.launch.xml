@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+    This file is part of WAMV project.
+
+    Author: Lin Zhao
+    Email: linzhao@uri.edu
+    Year: 2025
+
+    Copyright (C) 2024-2025 Smart Ocean Systems Laboratory
+-->
+<launch>
+
+
+    <arg name="robot_name" default="changeme"/>
+    <arg name="delay" default="1.0" />
+
+    <node ns="$(arg robot_name)" pkg="mvp_roslaunch_manager" type="roslaunch_manager_node.py" 
+          name="roslaunch_manager_node" output="screen" 
+          launch-prefix="bash -c 'sleep $(arg delay); $0 $@'">
+
+            <param name = "udp_srv_ip" value ="" />
+            <param name = "udp_port" value ="5050" />
+            <param name = "udp_stream_enable" value = "False" />
+    </node>
+
+</launch>
+

@@ -13,8 +13,9 @@ Motor:
 System:
   safety_timeout: 2
   # Brief: default value for field (e.g., salt pond) is 0.4
+  # Brief: default value for windy day (e.g., beach pond) is 0.5
   # Brief: default value for test is 0.1
-  scale: 0.1
+  scale: 0.5
 
 ROS:
   frame_id: torqeedo_starboard
