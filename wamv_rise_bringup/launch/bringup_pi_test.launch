@@ -13,15 +13,14 @@
     <arg name="robot_name" default="wamv_rise"/>
 
     <!-- Bring up DVL -->
-    <include file="$(find wamv_rise_bringup)/launch/include/nortek_dvl_ethernet.launch.xml">
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/nortek_dvl_ethernet.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="delay" value="6.0"/>
     </include> 
+     -->
 
-    <!-- Bring up Power Monitor -->
-    <include file="$(find wamv_rise_bringup)/launch/include/power_monitor.launch.xml">
+     <include file="$(find wamv_rise_bringup)/launch/include/xsens.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
-        <arg name="delay" value="1.0"/>
+        <arg name="delay" value="0.0"/>
     </include> 
-    
 </launch>

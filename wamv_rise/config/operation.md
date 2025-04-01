@@ -20,8 +20,11 @@ roslaunch wamv_rise_bringup bringup_pi_thruster.launch
 roslaunch wamv_rise_bringup bringup_pi_utilities.launch
 ```
 
-5) Pi: launch pi payload
+5) Pi: launch pi payload, then Power-on DVL (underwater payload).
 ```sh
+#check DVL
+ping 192.168.2.110
+
 roslaunch wamv_rise_bringup bringup_pi_payload.launch
 # check gps
 cgps -s
@@ -29,7 +32,11 @@ cgps -s
 watch -n -0.1 chronyc sources -v
 # check gps fix
 rostopic echo /wamv_rise/gps/fix
+
+#check DVL
+ping 192.168.2.110
 ```
+
 
 6) Pi: open jetson payload power (Jetson, Velodyne, Livox, big router)
 ```sh
@@ -37,8 +44,9 @@ rostopic echo /wamv_rise/gps/fix
 rosservice call /wamv_rise/gpio_manager/set_power_jetson_board "data: true"
 # ping Jetson:
 ping 192.168.2.90
-# check jetson time:
+# check jetson time username wamv-jetson:
 watch -n -0.1 chronyc sources -v
+
 ```
 
 7) Pi: open underwater payload power (DVL, USBL, Norbit)

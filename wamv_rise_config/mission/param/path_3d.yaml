@@ -35,5 +35,5 @@ acceptance_radius: 3.0
 
 
 surge_velocity: 1.25
-turning_surge_velocity: 1.0
-turning_angle_sector: 1.5
+turning_surge_velocity: 0.6
+turning_angle_sector: 1.0

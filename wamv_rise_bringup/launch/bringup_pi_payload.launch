@@ -37,9 +37,9 @@
     </include> 
 
     <!-- Bring up acoustic beacon  -->
-    <include file="$(find wamv_rise_bringup)/launch/include/acoustic_beacon.launch.xml">
+    <!-- <include file="$(find wamv_rise_bringup)/launch/include/acoustic_beacon.launch.xml">
         <arg name="robot_name" value="$(arg robot_name)"/>
         <arg name="delay" default="12.0" />
-    </include> 
+    </include>  -->
 
 </launch>

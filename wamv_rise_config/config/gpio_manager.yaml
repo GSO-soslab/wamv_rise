@@ -1,8 +1,8 @@
 # Brief: jetson_board -> Jetson, 2 Lidars, Big router
 # Brief: underwater_payload -> norbit, USBL, DVL
-device_name: [underwater_payload, jetson_board]
+device_name: [underwater_payload, jetson_board, norbit]
 
 #Wring PI GPIO number
-gpio: [12, 13]
+gpio: [12, 13, 11]
 
 
