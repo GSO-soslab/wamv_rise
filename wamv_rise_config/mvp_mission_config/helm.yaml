@@ -1,0 +1,28 @@
+finite_state_machine:
+  start:
+    initial: true
+    control_mode: idle
+    transitions: [survey, kill, teleop]
+
+  survey:
+    control_mode: flight
+    transitions: [start, kill]
+
+  teleop:
+    control_mode: flight
+    transitions: [start, kill]
+
+  kill:
+    control_mode: idle
+    transitions: [start]
+
+behaviors:
+  bhv_teleop:
+    plugin: helm/Teleoperation
+    priority:
+      teleop: 1
+
+  bhv_path_following:
+    plugin: helm/PathFollowing
+    priority:
+      survey: 1
