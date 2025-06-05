@@ -7,19 +7,6 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(rviz2 REQUIRED)
-find_package(tf2_ros REQUIRED)
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-
-# set(library_name ${PROJECT_NAME})
-
-
-# ament_export_include_directories(include)
-# ament_export_libraries(${library_name})
-# ament_export_dependencies(${dependencies})
 
 ##launch files
 install(DIRECTORY

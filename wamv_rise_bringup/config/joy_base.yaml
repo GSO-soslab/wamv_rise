@@ -1,0 +1,5 @@
+/wamv_base/joy_node:
+  ros__parameters:
+
+    coalesce_interval_ms: 100
+    autorepeat_rate: 0.0

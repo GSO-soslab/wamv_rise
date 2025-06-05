@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>wamv_rise_bringup</name>
+  <name>wamv_rise</name>
   <version>0.0.0</version>
-  <description>TODO: Package wamv_rise_bringup</description>
-  <maintainer email="mingxi@todo.todo">mingxi</maintainer>
-  <license>TODO: License declaration</license>
+  <description>The wamv_rise package</description>
+
+  <maintainer email="linzhao@uri.edu">Lin Zhao</maintainer>
+
+  <license>GPLv3</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
