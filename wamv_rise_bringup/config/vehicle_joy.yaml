@@ -1,0 +1,6 @@
+# /wamv_rise/vehicle_joy:
+/**:
+  ros__parameters:
+
+    serial_port: '/dev/holybro_rf'
+    baud_rate: 115200

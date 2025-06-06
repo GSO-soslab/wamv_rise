@@ -20,37 +20,37 @@ def generate_launch_description():
     )
 
     # Unicore RTK GPS
-    # unicore = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-    #         'launch/include/unicore_rtk.launch.py')]),
-    #     launch_arguments={
-    #         'robot_name': robot_name,
-    #         'unicore_delay': '3.0'
-    #     }.items()  
-    # )
+    unicore = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/unicore_rtk.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'unicore_delay': '3.0'
+        }.items()  
+    )
 
     # Nortek1000 DVL
-    # nortek = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-    #         'launch/include/nortek_dvl.launch.py')]),
-    #     launch_arguments={
-    #         'robot_name': robot_name,
-    #         'nortek_delay': '6.0'
-    #     }.items()  
-    # )    
+    nortek = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/nortek_dvl.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'nortek_delay': '6.0'
+        }.items()  
+    )    
 
     # Airmar weatherstation
-    # airmar = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-    #         'launch/include/airmar_ws.launch.py')]),
-    #     launch_arguments={
-    #         'robot_name': robot_name,
-    #         'airmar_delay': '9.0'
-    #     }.items()  
-    # )     
+    airmar = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/airmar_ws.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'airmar_delay': '9.0'
+        }.items()  
+    )     
 
     # Evologics USBL
 
