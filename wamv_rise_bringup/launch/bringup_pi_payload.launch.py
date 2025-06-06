@@ -30,6 +30,18 @@ def generate_launch_description():
         }.items()  
     )
 
+    # Nortek1000 DVL
+    nortek = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/nortek_dvl.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'nortek_delay': '6.0'
+        }.items()  
+    )    
+
+
     return LaunchDescription([
         xsens,
         unicore,
