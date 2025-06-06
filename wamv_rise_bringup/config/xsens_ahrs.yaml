@@ -1,4 +1,4 @@
-# /wamv_rise/xsens_mti_node:
+# /wamv_rise/xsens_ahrs:
 /**:
     ros__parameters:
         # Device Scanning Configuration

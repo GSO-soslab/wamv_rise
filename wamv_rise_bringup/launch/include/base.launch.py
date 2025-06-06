@@ -11,12 +11,12 @@ def generate_launch_description():
 
     rf_param_file = os.path.join(
         get_package_share_directory('wamv_rise_bringup'),
-        'config/rf_base.yaml'
+        'config/base_rf.yaml'
     )
 
     joy_param_file = os.path.join(
         get_package_share_directory('wamv_rise_bringup'),
-        'config/joy_base.yaml'
+        'config/base_joy.yaml'
     )
 
     return LaunchDescription([
@@ -30,7 +30,7 @@ def generate_launch_description():
         Node(
             package='wamv_rf_joy',
             executable='rf_joy_base_node',
-            name='rf_joy_base_node',
+            name='base_rf',
             namespace=robot_name,
             output='screen',
             parameters=[rf_param_file],
@@ -41,7 +41,7 @@ def generate_launch_description():
         Node(
             package='joy',
             executable='joy_node',
-            name='joy_node',
+            name='base_joy',
             namespace=robot_name,
             output='screen',
             parameters=[joy_param_file],

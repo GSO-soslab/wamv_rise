@@ -12,25 +12,25 @@ def generate_launch_description():
 
     # Node argument
     robot_name = LaunchConfiguration('robot_name')
-    airmar_delay = LaunchConfiguration('airmar_delay')
+    power_delay = LaunchConfiguration('power_delay')
 
     # Node param
     parameters_file = Path(
         get_package_share_directory('wamv_rise_bringup'), 
-        'config/airmar_ws.yaml'
+        'config/power_monitor.yaml'
     )
 
-    # Nortek DVL node
+    # Power Monitor node
     node = Node(
-        package='airmar_weatherstation',
-        executable='airmar_ws_driver_node',
-        name='airmar_ws',
+        package='power_monitor',
+        executable='power_monitor_node',
+        name='power_monitor',
         namespace=robot_name,
         output='screen',
-        parameters=[parameters_file],
-        emulate_tty=True
-    ),
-    
+        parameters=[parameters_file],      
+        emulate_tty=True        
+    )
+
     return LaunchDescription([
 
         # Decalre arguments
@@ -39,12 +39,12 @@ def generate_launch_description():
         ),
 
         DeclareLaunchArgument(
-            'airmar_delay', default_value = '0.0'            
+            'power_delay', default_value = '0.0'            
         ),
 
         # Delay the node if needed
         TimerAction(
-            period=PythonExpression([airmar_delay]),
+            period=PythonExpression([power_delay]),
             actions=[node]
         ),
     ])

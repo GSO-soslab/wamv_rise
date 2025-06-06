@@ -12,24 +12,25 @@ def generate_launch_description():
 
     # Node argument
     robot_name = LaunchConfiguration('robot_name')
-    airmar_delay = LaunchConfiguration('airmar_delay')
+    gpio_delay = LaunchConfiguration('gpio_delay')
 
     # Node param
     parameters_file = Path(
         get_package_share_directory('wamv_rise_bringup'), 
-        'config/airmar_ws.yaml'
+        'config/gpio_manager.yaml'
     )
 
-    # Nortek DVL node
+    # GPIO Manager node
     node = Node(
-        package='airmar_weatherstation',
-        executable='airmar_ws_driver_node',
-        name='airmar_ws',
+        package='mvp_gpio_manager',
+        executable='gpio_manager_node',
+        name='gpio_manager',
         namespace=robot_name,
         output='screen',
+        # prefix=['stdbuf -o L'],
         parameters=[parameters_file],
-        emulate_tty=True
-    ),
+        emulate_tty=True        
+    )    
     
     return LaunchDescription([
 
@@ -39,12 +40,12 @@ def generate_launch_description():
         ),
 
         DeclareLaunchArgument(
-            'airmar_delay', default_value = '0.0'            
+            'gpio_delay', default_value = '0.0'            
         ),
 
         # Delay the node if needed
         TimerAction(
-            period=PythonExpression([airmar_delay]),
+            period=PythonExpression([gpio_delay]),
             actions=[node]
         ),
     ])

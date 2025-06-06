@@ -1,5 +1,6 @@
-/wamv_rise/gpio_manager_node:
+# /wamv_rise/gpio_manager:
+/**:
   ros__parameters:
-    gpio_devices: [payload_24v, regular_payload, jetson]
+    gpio_devices: [underwater_payload, jetson_board, norbit]
     #Wring PI GPIO number
-    wiringpi_gpio: [13, 12, 11]
+    wiringpi_gpio: [12, 13, 11]

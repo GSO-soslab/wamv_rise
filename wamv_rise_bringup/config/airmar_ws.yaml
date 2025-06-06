@@ -1,4 +1,4 @@
-# /wamv_rise/airmar:
+# /wamv_rise/airmar_ws:
 /**:
   ros__parameters:
     # The usb device for unicore gps
