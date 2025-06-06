@@ -4,6 +4,10 @@ finite_state_machine:
     control_mode: idle
     transitions: [survey, kill, teleop]
 
+  kill:
+    control_mode: idle
+    transitions: [start]
+    
   survey:
     control_mode: flight
     transitions: [start, kill]
@@ -11,10 +15,6 @@ finite_state_machine:
   teleop:
     control_mode: flight
     transitions: [start, kill]
-
-  kill:
-    control_mode: idle
-    transitions: [start]
 
 behaviors:
   bhv_teleop:

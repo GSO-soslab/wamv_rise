@@ -1,4 +1,5 @@
-/wamv_rise/mvp_control_ros_node:
+# /wamv_rise/mvp_control:
+/**:
   ros__parameters:
     generator_type: tf
     controller_frequency: 10.0

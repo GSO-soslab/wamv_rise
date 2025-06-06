@@ -1,0 +1,41 @@
+control_modes:
+  idle: false
+
+  flight:
+    surge:    {p: 100.0,   i: 15.0,   d: 1.0,   pid_max: 550.0, pid_min: -550.0}
+    yaw:      {p: 100.0,   i: 1.0,   d: 25.0,  pid_max: 300.0, pid_min: -300.0}    
+
+##
+# THRUSTERS
+##
+thruster_ids:
+  port:
+    control_tf: port_thruster_link
+    command_topic: control/thruster/port
+    force_topic: control/force/port_thruster
+    limits: [-400.0, 400.0]
+    polynomials: [0.0, 439.65, 0.0, 1015.8]
+
+  starboard:
+    control_tf: starboard_thruster_link
+    command_topic: control/thruster/starboard
+    force_topic: control/force/starboard_thruster
+    limits: [-400.0, 400.0]
+    polynomials: [0.0, 439.65, 0.0, 1015.8]
+
+# Polynomials for each thruster.
+#
+# Quadratic Programming Optimization computes the thrust
+# required. We need to turn that number into thruster command.
+# Setpoint commands in this system defined between -1 and 1.
+#
+# y axis of the polynomial , f(x) = y, should be in Newton.
+#
+# Take the polynomial
+# f(x) = a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0
+#
+# Array would hold the lower degrees in lower indexes. Shown below:
+# [a_0, a_1, ... ,a_(n-1), a(n)]
+#   f(x) = a5*x^5 + a4*x^4 + a3*x^3 + a2*x^2 + a1*x + a0
+
+# f(x) = 1015.8 *x^3 + 0*x^2 + 439.65*x

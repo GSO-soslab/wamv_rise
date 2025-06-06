@@ -1,4 +1,5 @@
-/wamv_rise/mvp2_helm_node:
+# /wamv_rise/mvp_mission:
+/**:
   ros__parameters:
     frequency: 10.0
     default_child_link: cg_link
