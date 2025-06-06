@@ -22,13 +22,13 @@ def generate_launch_description():
 
     # Nortek DVL node
     node = Node(
-            package="nortek_dvl",
-            executable="nortek_dvl_node",
-            name="nortek",
-            output="screen",
-            namespace=robot_name,
-            parameters=[parameters_file],
-            emulate_tty=True        
+        package="nortek_dvl",
+        executable="nortek_dvl_node",
+        name="nortek",
+        output="screen",
+        namespace=robot_name,
+        parameters=[parameters_file],
+        emulate_tty=True        
     ),
     
     return LaunchDescription([

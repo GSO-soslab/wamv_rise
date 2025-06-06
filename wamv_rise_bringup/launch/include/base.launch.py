@@ -33,7 +33,8 @@ def generate_launch_description():
             name='rf_joy_base_node',
             namespace=robot_name,
             output='screen',
-            parameters=[rf_param_file]
+            parameters=[rf_param_file],
+            emulate_tty=True
         ),        
 
         # Base Joy node
@@ -43,7 +44,8 @@ def generate_launch_description():
             name='joy_node',
             namespace=robot_name,
             output='screen',
-            parameters=[joy_param_file]
+            parameters=[joy_param_file],
+            emulate_tty=True
         ),
 
     ])

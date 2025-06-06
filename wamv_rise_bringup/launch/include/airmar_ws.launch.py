@@ -12,25 +12,24 @@ def generate_launch_description():
 
     # Node argument
     robot_name = LaunchConfiguration('robot_name')
-    xsens_delay = LaunchConfiguration('xsens_delay')
+    airmar_delay = LaunchConfiguration('airmar_delay')
 
     # Node param
     parameters_file = Path(
         get_package_share_directory('wamv_rise_bringup'), 
-        'config/xsens_ahrs.yaml'
+        'config/airmar_ws.yaml'
     )
 
-    # Xsens AHRS node
+    # Nortek DVL node
     node = Node(
-        package='xsens_mti_ros2_driver',
-        executable='xsens_mti_node',
-        name='xsens_ahrs',
-        output='screen',
+        package='airmar_weatherstation',
+        executable='airmar_ws_driver_node',
+        name='airmar',
         namespace=robot_name,
+        output='screen',
         parameters=[parameters_file],
-        arguments=[],
         emulate_tty=True
-    )
+    ),
     
     return LaunchDescription([
 
@@ -40,21 +39,12 @@ def generate_launch_description():
         ),
 
         DeclareLaunchArgument(
-            'xsens_delay', default_value = '0.0'            
+            'airmar_delay', default_value = '0.0'            
         ),
-
-        # Env variables
-        SetEnvironmentVariable(
-            name = 'RCUTILS_LOGGING_USE_STDOU', value = '1'
-        ),
-
-        SetEnvironmentVariable(
-            name = 'RCUTILS_LOGGING_BUFFERED_STREAM', value = '1'
-        ),        
 
         # Delay the node if needed
         TimerAction(
-            period=PythonExpression([xsens_delay]),
+            period=PythonExpression([airmar_delay]),
             actions=[node]
         ),
     ])

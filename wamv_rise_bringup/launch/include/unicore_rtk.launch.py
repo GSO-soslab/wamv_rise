@@ -22,12 +22,13 @@ def generate_launch_description():
 
     # Unicore RTK GPS node
     node = Node(
-            package='unicore_rtk_driver',
-            executable='unicore_rtk_driver_node',
-            name='unicore_rtk',
-            output='screen',
-            namespace=robot_name,
-            parameters=[parameters_file]
+        package='unicore_rtk_driver',
+        executable='unicore_rtk_driver_node',
+        name='unicore_rtk',
+        output='screen',
+        namespace=robot_name,
+        parameters=[parameters_file],
+        emulate_tty=True
     )   
 
     return LaunchDescription([

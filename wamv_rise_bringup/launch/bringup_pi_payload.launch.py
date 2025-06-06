@@ -41,8 +41,22 @@ def generate_launch_description():
         }.items()  
     )    
 
+    # Airmar weatherstation
+    airmar = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/airmar_ws.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'airmar_delay': '9.0'
+        }.items()  
+    )     
+
+    # Evologics USBL
 
     return LaunchDescription([
         xsens,
         unicore,
+        nortek,
+        airmar,
     ])
