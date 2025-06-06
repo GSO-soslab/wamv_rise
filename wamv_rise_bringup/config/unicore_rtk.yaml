@@ -1,0 +1,14 @@
+# /wamv_rise/unicore_rtk_driver:
+/**:
+    ros__parameters:
+
+        # The usb device for unicore gps
+        device: /dev/unicore_gps
+        baudrate: 115200
+
+        # True: use the gps timestamp, False: use IO time when gps message arrived
+        use_gnss_time: True
+
+        # True: it will print some debug msg for each sentence
+        # False: logger used as INFO
+        debug: False

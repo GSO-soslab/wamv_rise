@@ -5,17 +5,15 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
-    # TODO: test the robot name
-    arg_robot_name = 'wamv_base'
+
+    robot_name = 'wamv_base'
 
     # Base Launch
     base = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch',
-            'include',
-            'base.launch.py')]),
-        launch_arguments = {'arg_robot_name': arg_robot_name}.items()    
+            'launch/include/base.launch.py')]),
+        launch_arguments = {'robot_name': robot_name}.items()    
     )
 
     return LaunchDescription([

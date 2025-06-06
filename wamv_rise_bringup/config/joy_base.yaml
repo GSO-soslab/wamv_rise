@@ -1,4 +1,5 @@
-/wamv_base/joy_node:
+# /wamv_base/joy_node:
+/**:
   ros__parameters:
 
     coalesce_interval_ms: 100

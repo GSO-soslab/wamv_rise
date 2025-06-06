@@ -3,10 +3,11 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
+from launch.actions import DeclareLaunchArgument
 
 def generate_launch_description():
 
-    robot_name = 'wamv_base'
+    robot_name = LaunchConfiguration('robot_name')
 
     rf_param_file = os.path.join(
         get_package_share_directory('wamv_rise_bringup'),
@@ -20,6 +21,11 @@ def generate_launch_description():
 
     return LaunchDescription([
 
+        # Decalre the robot_name
+        DeclareLaunchArgument(
+            'my_robot', default_value = 'robot_name'            
+        ),
+
         # Base RF node
         Node(
             package='wamv_rf_joy',
@@ -30,6 +36,7 @@ def generate_launch_description():
             parameters=[rf_param_file]
         ),        
 
+        # Base Joy node
         Node(
             package='joy',
             executable='joy_node',
