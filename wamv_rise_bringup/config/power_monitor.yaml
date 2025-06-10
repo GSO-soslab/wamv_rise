@@ -11,7 +11,7 @@
             # 
             mode: 1
             #
-            channel: 1
+            channel: 2
 
         current:
             # brief: device address
@@ -23,22 +23,24 @@
             # 
             mode: 1
             #
-            channel: 2
+            channel: 1
 
         system:
             #
-            rate: 2
+            rate: 5
             # 
-            voltage_ratio: 0.090082
+            # voltage_ratio: 0.090082
+            voltage_ratio: 0.0625
+
+            # 
+            voltage_warn: 21.0        
             #
             current_ratio: 0.092147
             #
             current_offset: 2.5
             #
-            current_scale: 0.066
-            #
-            voltage_warn: 15.0
+            current_scale: 0.066            
 
         ros:
             #
-            frame_id: alpha
+            frame_id: wamv_rise
