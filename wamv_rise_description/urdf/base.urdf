@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<robot name="wamv_rise" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<robot name="wamv_rise">
 
     <link name="base_link">
     </link>
@@ -11,12 +12,12 @@
         <child link="nose_tip_link"/>
     </joint>
 
-    <!-- <link name="cg_link"/>
+    <link name="cg_link"/>
     <joint name="cg_joint" type="fixed">
         <origin xyz="0.0 0.0 0.0" rpy="3.1415926 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="cg_link"/>
-    </joint> -->
+    </joint>
 
     <link name="imu"/>
     <joint name="imu_joint" type="fixed">
@@ -32,6 +33,13 @@
         <child link="gps"/>
     </joint>
 
+    <link name="unicore_gps"/>
+    <joint name="unicore_gps_joint" type="fixed">
+        <origin xyz="0.26 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="gps"/>
+        <child link="unicore_gps"/>
+    </joint>
+
     <!-- <link name="rtk_gps"/>
     <joint name="rtk_gps_joint" type="fixed">
         <origin xyz="-0.73 -0.06 0.105" rpy="0.0 0.0 0.0"/>
@@ -41,7 +49,7 @@
 
     <link name="nortek_dvl"/>
     <joint name="dvl_joint" type="fixed">
-        <origin xyz="-1.21435 -0.096718 -0.909" rpy="0.0 0.0 0.0"/>
+        <origin xyz="-1.4352 0.0375 -0.909" rpy="3.1415926 0.0 -1.5707963"/>
         <parent link="nose_tip_link"/>
         <child link="nortek_dvl"/>
     </joint>
@@ -77,6 +85,27 @@
         <child link="norbit"/>
     </joint>
 
+    <link name="usbl"/>
+    <joint name="usbl_joint" type="fixed">
+        <origin xyz="-1.21435 -0.096718 -1.0" rpy="0.0 0.0 -0.349065844"/>
+        <parent link="nose_tip_link"/>
+        <child link="usbl"/>
+    </joint>    
+
+    <link name="port_thruster_link"/>
+    <joint name="port_thruster_joint" type="fixed">
+        <origin xyz="-0.77 0.5 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="port_thruster_link"/>
+    </joint>       
+
+    <link name="starboard_thruster_link"/>
+    <joint name="starboard_thruster_joint" type="fixed">
+        <origin xyz="-0.77 -0.5 -0.1" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="starboard_thruster_link"/>
+    </joint> 
+
     <!-- sf sim sensors -->
 
     <!-- <link name="imu_sf"/>
@@ -92,19 +121,5 @@
         <parent link="base_link"/>
         <child link="dvl_sf"/>
     </joint> -->
-
-    <link name="port_thruster_link"/>
-    <joint name="port_thruster_joint" type="fixed">
-        <origin xyz="-0.77 0.5 -0.1" rpy="0.0 0.0 0.0"/>
-        <parent link="nose_tip_link"/>
-        <child link="port_thruster_link"/>
-    </joint>
-
-    <link name="starboard_thruster_link"/>
-    <joint name="starboard_thruster_joint" type="fixed">
-        <origin xyz="-0.77 -0.5 -0.1" rpy="0.0 0.0 0.0"/>
-        <parent link="nose_tip_link"/>
-        <child link="starboard_thruster_link"/>
-    </joint>
 
 </robot>

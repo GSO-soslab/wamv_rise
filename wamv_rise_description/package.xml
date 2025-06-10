@@ -4,13 +4,11 @@
   <name>wamv_rise_description</name>
   <version>0.0.0</version>
   <description>TODO: Package wamv_rise_description</description>
-  <maintainer email="mingxi@todo.todo">mingxi</maintainer>
+  <maintainer email="linzhao@uri.edu">Lin Zhao</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <depend>rclcpp</depend>
-  <depend>rviz2</depend>
-  <depend>tf2_ros</depend>
+  
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 

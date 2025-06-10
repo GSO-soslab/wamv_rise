@@ -1,0 +1,10 @@
+# /wamv_rise/world_odom_transform_node:
+/**:
+  ros__parameters:
+    acceptable_var: 5.0
+    m_gps_wait_time: 30.0
+    datum_latitude: 41.4904437
+    datum_longitude: -71.4231766
+    position_accuracy: 3.0
+    mag_declination_auto: false
+    use_depth_for_tf: true

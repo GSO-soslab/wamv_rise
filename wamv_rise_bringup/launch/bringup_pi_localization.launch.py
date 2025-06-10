@@ -8,29 +8,29 @@ def generate_launch_description():
 
     robot_name = 'wamv_rise'
 
-    # MVP Control
-    control = IncludeLaunchDescription(
+    # Vehicle description
+    description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/mvp_control.launch.py')]),
+            'launch/include/description.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'control_delay': '0.0'
+            'description_delay': '0.0'
         }.items()  
     )
 
-    # MVP Mission
-    mission = IncludeLaunchDescription(
+    # Vehicle localization
+    localization = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/mvp_mission.launch.py')]),
+            'launch/include/localization.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'mission_delay': '3.0'
+            'localization_delay': '3.0'
         }.items()  
     )
 
     return LaunchDescription([
-        control,
-        mission,
+        description,
+        localization,
     ])
