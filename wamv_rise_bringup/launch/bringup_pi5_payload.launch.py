@@ -30,8 +30,19 @@ def generate_launch_description():
         }.items()  
     )
 
+    # Norbit MBES
+    norbit = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/norbit_mbes.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'norbit_delay': '0.0'
+        }.items()  
+    )
 
     return LaunchDescription([
-        # livox,
+        livox,
         velodyne,
+        norbit,
     ])
