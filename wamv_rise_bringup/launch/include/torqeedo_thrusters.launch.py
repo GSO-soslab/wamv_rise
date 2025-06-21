@@ -33,12 +33,17 @@ def generate_launch_description():
         namespace=robot_name,
         output="screen",
         remappings=[
-            ('control/speed_mode', '/wamv/joy_mode'),
-            ('control/joy_speed', '/wamv/port_thruster'),
+            # ('control/speed_mode', '/wamv/joy_mode'),
+            # ('control/joy_speed', '/wamv/port_thruster'),
+
+            # ('control/speed_mode', '/wamv_rise/rf_joy/joy_mode'),
+            # ('control/joy_speed', '/wamv_rise/rf_joy/port_thruster'),
+            ('torqeedo_port/control/speed_mode', 'rf_joy/joy_mode'),
+            ('torqeedo_port/control/joy_speed', 'rf_joy/port_thruster'),
         ],
         parameters=[port_parameters_file],          
         emulate_tty=True
-    ),
+    )
 
     # Stbd motor
     node_stbd = Node(
@@ -48,12 +53,12 @@ def generate_launch_description():
         namespace=robot_name,
         output="screen",
         remappings=[
-            ('control/speed_mode', '/wamv/joy_mode'),
-            ('control/joy_speed', '/wamv/starboard_thruster'),
+            ('torqeedo_stbd/control/speed_mode', 'rf_joy/joy_mode'),
+            ('torqeedo_stbd/control/joy_speed', 'rf_joy/starboard_thruster'),
         ],
         parameters=[stbd_parameters_file],
         emulate_tty=True
-    ),
+    )
         
 
     return LaunchDescription([

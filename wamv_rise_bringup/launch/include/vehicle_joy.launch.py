@@ -24,7 +24,7 @@ def generate_launch_description():
     node = Node(
         package='wamv_rf_joy',
         executable='rf_joy_vehicle_node',
-        name='vehicle_joy',
+        name='rf_joy',
         namespace=robot_name,
         output='screen',
         parameters=[parameters_file],          

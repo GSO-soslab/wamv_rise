@@ -19,4 +19,4 @@
       scale: 0.1
 
     ROS:
-      frame_id: torqeedo_port
+      frame_id: wamv_rise/torqeedo_port

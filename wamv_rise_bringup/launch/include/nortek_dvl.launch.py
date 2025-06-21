@@ -29,7 +29,7 @@ def generate_launch_description():
         namespace=robot_name,
         parameters=[parameters_file],
         emulate_tty=True        
-    ),
+    )
     
     return LaunchDescription([
 

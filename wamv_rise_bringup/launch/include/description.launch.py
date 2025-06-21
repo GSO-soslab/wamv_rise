@@ -30,7 +30,7 @@ def generate_launch_description():
         namespace=robot_name,
         # output='screen',
         parameters=[{'robot_description' : robot_desc},
-                    {'frame_prefix': robot_name +'/'}],
+                    {'frame_prefix': [robot_name, '/']}],
     )
     
     # Static Publisher node
@@ -39,7 +39,11 @@ def generate_launch_description():
         executable='static_transform_publisher',
         name='world2ned',
         arguments = ["0.0", "0.0", "0.0", "1.570796327", "0.0", "3.141592653589793", 
-                     robot_name+'/world', robot_name+'/world_ned']    
+                    #  robot_name+'/world', 
+                    [robot_name, '/world'],
+                    [robot_name, '/world_ned']
+                    #  robot_name+'/world_ned'
+                    ]    
     )
         
     return LaunchDescription([

@@ -5,6 +5,8 @@
         # The usb device for unicore gps
         device: /dev/unicore_gps
         baudrate: 115200
+        heading_frame_id: wamv_rise/world_ned
+        gps_frame_id: wamv_rise/unicore_gps
 
         # True: use the gps timestamp, False: use IO time when gps message arrived
         use_gnss_time: True

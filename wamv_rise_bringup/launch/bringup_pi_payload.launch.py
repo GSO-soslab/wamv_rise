@@ -39,7 +39,7 @@ def generate_launch_description():
             'robot_name': robot_name,
             'nortek_delay': '6.0'
         }.items()  
-    )    
+    )
 
     # Airmar weatherstation
     airmar = IncludeLaunchDescription(
@@ -50,7 +50,7 @@ def generate_launch_description():
             'robot_name': robot_name,
             'airmar_delay': '9.0'
         }.items()  
-    )     
+    ) 
 
     # Evologics USBL
 

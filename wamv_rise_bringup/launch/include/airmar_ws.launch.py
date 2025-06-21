@@ -29,7 +29,7 @@ def generate_launch_description():
         output='screen',
         parameters=[parameters_file],
         emulate_tty=True
-    ),
+    )
     
     return LaunchDescription([
 

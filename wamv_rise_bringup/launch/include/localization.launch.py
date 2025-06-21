@@ -7,6 +7,7 @@ from launch.actions import TimerAction
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from pathlib import Path
+import os
 
 def generate_launch_description():
 
@@ -20,7 +21,7 @@ def generate_launch_description():
         'config/localization.yaml'
     )
      
-    mag_model_path = Path(
+    mag_model_path = os.path.join(
         get_package_share_directory('mvp_localization_utilities'), 
         'config/magnetic/'
     )
@@ -53,8 +54,9 @@ def generate_launch_description():
                 {'tf_prefix': robot_name},
                 {'mag_model_path': mag_model_path},
                  init_file],
-            remappings=[('odometry', 'odometry/filtered'),
-                        ('depth/odometry', 'dvl/depth_odometry') ],
+            remappings=[('gps/fix', 'xsens_ahrs/gnss'),
+                        ('odometry', 'odometry/filtered'),
+                        ('depth', 'nortek_dvl/depth_odometry') ],
             emulate_tty=True        
     )
         

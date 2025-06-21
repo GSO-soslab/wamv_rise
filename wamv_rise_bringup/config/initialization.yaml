@@ -3,8 +3,15 @@
   ros__parameters:
     acceptable_var: 5.0
     m_gps_wait_time: 30.0
-    datum_latitude: 41.4904437
-    datum_longitude: -71.4231766
+
+    ## CACS
+    datum_latitude: 41.4904292
+    datum_longitude: -71.4230804
+
+    ## salty pond
+    # datum_latitude: 41.4272412
+    # datum_longitude: -71.4964559
+
     position_accuracy: 3.0
     mag_declination_auto: false
     use_depth_for_tf: true

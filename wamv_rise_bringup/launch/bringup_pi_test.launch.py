@@ -9,54 +9,17 @@ def generate_launch_description():
 
     robot_name = 'wamv_rise'
 
-    # Foxglove
-    foxglove = IncludeLaunchDescription(
-        XMLLaunchDescriptionSource(
-            os.path.join(
-                get_package_share_directory('wamv_rise_bringup'),
-                'launch/include/foxglove_bridge.launch.xml')),
-        launch_arguments={
-            'namespace': robot_name
-        }.items()
-    )
-
-    # GPIO manager
-    gpio = IncludeLaunchDescription(
+    # Airmar weatherstation
+    airmar = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/gpio_manager.launch.py')]),
+            'launch/include/airmar_ws.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'gpio_delay': '3.0'
-        }.items()  
-    )    
-
-    # Power Monitor
-    power = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/power_monitor.launch.py')]),
-        launch_arguments={
-            'robot_name': robot_name,
-            'power_delay': '0.0'
+            'airmar_delay': '9.0'
         }.items()  
     ) 
-
-    # Comuter Monitor
-    computer = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([
-            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/computer_monitoring.launch.py')]),
-        launch_arguments={
-            'robot_name': robot_name,
-            'computer_delay': '0.0'
-        }.items()  
-    ) 
-
 
     return LaunchDescription([
-        # foxglove,
-        gpio,
-        power,
-        # computer,
+        airmar,
     ])    

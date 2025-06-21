@@ -19,4 +19,4 @@
       scale: 0.1
 
     ROS:
-      frame_id: torqeedo_starboard
+      frame_id: wamv_rise/torqeedo_starboard
