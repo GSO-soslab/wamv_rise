@@ -14,6 +14,7 @@ thruster_ids:
     command_topic: control/thruster/port
     force_topic: control/force/port_thruster
     limits: [-400.0, 400.0]
+    delta_limit: 10.0
     polynomials: [0.0, 439.65, 0.0, 1015.8]
 
   starboard:
@@ -21,6 +22,7 @@ thruster_ids:
     command_topic: control/thruster/starboard
     force_topic: control/force/starboard_thruster
     limits: [-400.0, 400.0]
+    delta_limit: 10.0
     polynomials: [0.0, 439.65, 0.0, 1015.8]
 
 # Polynomials for each thruster.

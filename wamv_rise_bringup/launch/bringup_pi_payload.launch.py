@@ -56,7 +56,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         xsens,
-        # unicore,
-        # nortek,
-        # airmar,
+        unicore,
+        nortek,
+        airmar,
     ])

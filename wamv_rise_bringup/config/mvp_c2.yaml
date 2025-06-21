@@ -1,0 +1,41 @@
+#####vehicle side stuff
+/alpha_rise/reporter_c2_serial_comm:
+  ros__parameters:
+    port: /dev/ttyUSB1
+    baudrate: 115200
+
+/alpha_rise/reporter_c2_udp_comm:
+  ros__parameters:
+    type: client
+    server_ip: 192.168.2.8
+    server_port: 5000
+    client_ip: 192.168.2.55
+    client_port: 6000
+    dccl_tx_interval: 1.0
+
+
+/alpha_rise/mvp_c2_reporter:
+  ros__parameters:
+    dccl_tx_interval: 1.0
+    helm_state_list: ['start', 'kill', 'teleop', 'survey'] #this has to match the helm
+    launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
+    launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']
+    gpio_devices: [underwater_payload, jetson_board, norbit]  # this needs to match the gpio manager yaml
+
+## topside stuff
+/alpha_rise/mvp_c2_commander:
+  ros__parameters:
+    dccl_tx_interval: 1.0
+    helm_state_list: ['start', 'kill', 'teleop', 'survey'] #this has to match the helm
+    launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
+    launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']
+    gpio_devices: [underwater_payload, jetson_board, norbit]  # this needs to match the gpio manager yaml
+
+
+/alpha_rise/commander_c2_udp_comm:
+  ros__parameters:
+    type: server
+    server_ip: 192.168.2.8
+    server_port: 5000
+    client_ip: 192.168.2.55
+    client_port: 6000

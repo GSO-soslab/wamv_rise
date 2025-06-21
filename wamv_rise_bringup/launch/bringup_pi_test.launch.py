@@ -56,7 +56,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         # foxglove,
-        # gpio,
+        gpio,
         power,
-        computer,
+        # computer,
     ])    
