@@ -24,12 +24,12 @@ def generate_launch_description():
     node = Node(
         package="norbit",
         executable="norbit_mbes_node",
-        name="norbit_mbes_node",
+        name="norbit_mbes",
         output="screen",
         namespace=robot_name,
         parameters=[parameters_file],
         emulate_tty=True        
-    ),
+    )
 
     return LaunchDescription([
 

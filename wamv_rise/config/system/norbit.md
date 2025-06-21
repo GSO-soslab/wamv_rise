@@ -74,3 +74,8 @@ ntp_log
 # exit
 ctrl + ] quit
 ```
+
+```sh
+# ros2
+ros2 service call /wamv_rise/norbit_mbes/norbit_cmd norbit_msgs/srv/NorbitCmd "{cmd: 'set_ntp_server', val: '192.168.2.91'}"
+```

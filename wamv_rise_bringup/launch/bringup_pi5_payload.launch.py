@@ -26,7 +26,7 @@ def generate_launch_description():
             'launch/include/velodyne_lidar.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'velodyne_delay': '0.0'
+            'velodyne_delay': '3.0'
         }.items()  
     )
 
@@ -37,7 +37,7 @@ def generate_launch_description():
             'launch/include/norbit_mbes.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'norbit_delay': '0.0'
+            'norbit_delay': '6.0'
         }.items()  
     )
 
