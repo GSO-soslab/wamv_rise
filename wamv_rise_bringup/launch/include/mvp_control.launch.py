@@ -7,6 +7,7 @@ from launch.actions import TimerAction
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from pathlib import Path
+import os
 
 def generate_launch_description():
 
@@ -20,9 +21,9 @@ def generate_launch_description():
         'config/mvp_control.yaml'
     )
 
-    configuration_file = Path(
+    configuration_file = os.path.join(
         get_package_share_directory('wamv_rise_config'), 
-        'mvp_control_config/config.yaml'
+        'mvp_control_config', 'config.yaml'
     )    
 
     # MVP Control node
@@ -36,7 +37,7 @@ def generate_launch_description():
         parameters=[
             {'config_file': configuration_file},
             {'tf_prefix': robot_name},
-            {'odometry_source': '/'+ robot_name + '/odometry/filtered'},
+            {'odometry_source':  ['/', robot_name, '/odometry/filtered']},
             parameters_file],
         emulate_tty=True
     )

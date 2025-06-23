@@ -8,7 +8,7 @@ bhv_path_following:
   acceptance_radius: 3.0
   lookahead_distance: 3.0
   overshoot_timeout: 600.0
-  surge_velocity: 1.25
+  surge_velocity: 1.0
   
   sigma: 0.00 #integral gain
   beta_gain: 0.0 #sideslip compensation gain
@@ -21,7 +21,7 @@ bhv_path_following:
   lookahead_max: 8.0
   lookahead_min: 2.0
   lookahead_gamma: 1.0
-  turning_surge_velocity: 0.6
+  turning_surge_velocity: 0.3
   turning_angle_sector: 1.0
 
   waypoint_x: [30.0, 0.0]

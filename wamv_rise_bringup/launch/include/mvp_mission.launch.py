@@ -8,6 +8,7 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from pathlib import Path
 import yaml
+import os
 
 def generate_launch_description():
 
@@ -34,9 +35,9 @@ def generate_launch_description():
         bhv_prefixed_params.update({bhv_prefix + key: value for key, value in bhv_params.items()})
 
     # Configuration file
-    helm_config_file = Path(
+    helm_config_file = os.path.join(
         get_package_share_directory('wamv_rise_config'), 
-        'mvp_mission_config/helm.yaml'
+        'mvp_mission_config', 'helm.yaml'
     )    
 
     # MVP Mission node

@@ -2,7 +2,7 @@ control_modes:
   idle: false
 
   flight:
-    surge:    {p: 100.0,   i: 15.0,   d: 1.0,   pid_max: 550.0, pid_min: -550.0}
+    u:    {p: 100.0,   i: 15.0,   d: 1.0,   pid_max: 550.0, pid_min: -550.0}
     yaw:      {p: 100.0,   i: 1.0,   d: 25.0,  pid_max: 300.0, pid_min: -300.0}    
 
 ##
@@ -11,7 +11,7 @@ control_modes:
 thruster_ids:
   port:
     control_tf: port_thruster_link
-    command_topic: control/thruster/port
+    command_topic: torqeedo_port/control/controller_speed
     force_topic: control/force/port_thruster
     limits: [-400.0, 400.0]
     delta_limit: 10.0
@@ -19,7 +19,7 @@ thruster_ids:
 
   starboard:
     control_tf: starboard_thruster_link
-    command_topic: control/thruster/starboard
+    command_topic: torqeedo_stbd/control/controller_speed
     force_topic: control/force/starboard_thruster
     limits: [-400.0, 400.0]
     delta_limit: 10.0
