@@ -32,10 +32,9 @@
     #imu data input
     imu0: xsens_ahrs/imu/data
     imu0_config: [false, false, false,
-                  true,  true,  false,
+                  true,  true,  true,
                   false, false, false,
                   true,  true,  true,
-                  # false,  false,  false]
                   true, true, true]
     imu0_nodelay: true
     imu0_differential: false

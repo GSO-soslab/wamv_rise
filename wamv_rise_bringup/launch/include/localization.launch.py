@@ -54,7 +54,9 @@ def generate_launch_description():
                 {'tf_prefix': robot_name},
                 {'mag_model_path': mag_model_path},
                  init_file],
-            remappings=[('gps/fix', 'xsens_ahrs/gnss'),
+            remappings=[
+                        # ('gps/fix', 'xsens_ahrs/gnss'),
+                        ('gps/fix', 'unicore_rtk/fix'),
                         ('odometry', 'odometry/filtered'),
                         ('depth', 'nortek_dvl/depth_odometry') ],
             emulate_tty=True        
