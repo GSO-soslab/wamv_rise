@@ -3,7 +3,7 @@
   ros__parameters:
 
     sensor_frame:       "wamv_rise/norbit"                # the TF frame of the norbit
-    ip:                 "192.168.2.179"            # the IP addres of your norbit
+    ip:                 "192.168.2.130"            # the IP addres of your norbit
     bathy_port:         2210                    # the port which bathymetry is published. normally/default 2210
     water_column_port:  2211
     cmd_port:           2209                    # the port the norbit listens for commands. normally/default 2209
@@ -23,7 +23,7 @@
         set_range:        ".5 30"
         set_time_source:  "1"                    # 0: IRIG-B 1:NTP 2: IRIG-B (inverted) 3: NTP+PPS(pos) 4: NTP+PPS(neg) 5: ZDA+PPS(pos) 6:ZDA+PPS(neg) 7:ZDA 8:Free run (time since startup)
         set_rate:         "10"                    # Default: 20Hz
-        # set_ntp_server:   "192.168.2.91"
+        set_ntp_server:   "192.168.2.55"
 
     shutdown_settings:
         set_power:      "0"
