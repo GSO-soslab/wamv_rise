@@ -17,7 +17,7 @@ def generate_launch_description():
         
         Node(
             package = 'mvp_c2',
-            namespace = 'commander',
+            namespace = robot_name,
             executable='mvp_c2_serial_comm',
             name = 'commander_c2_serial_comm',
             output='screen',
