@@ -2,7 +2,7 @@ finite_state_machine:
   start:
     initial: true
     control_mode: idle
-    transitions: [survey, kill, teleop]
+    transitions: [survey, kill, teleop, manual_teleop]
     # max_duration: .inf
     # exit_state: start
     
@@ -23,6 +23,10 @@ finite_state_machine:
     transitions: [start, kill]
     # max_duration: 100
     # exit_state: start
+
+  manual_teleop::
+    control_mode: idle
+    transitions: [start, survey, teleop, kill] 
 
 behaviors:
   bhv_teleop:

@@ -13,25 +13,11 @@ def generate_launch_description():
     
     return LaunchDescription([
         # serial_comm
-        # Node(
-        #     package = 'mvp_c2',
-        #     namespace = robot_name,
-        #     executable='mvp_c2_serial_comm',
-        #     name = 'reporter_c2_serial_comm',
-        #     output='screen',
-        #     prefix=['stdbuf -o L'],
-        #     parameters=[reporter_setting_file],
-        #     remappings=[
-        #         ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
-        #         ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
-        #     ]
-        # ),
-        #udp
         Node(
             package = 'mvp_c2',
             namespace = robot_name,
-            executable='mvp_c2_udp_comm',
-            name = 'reporter_c2_udp_comm',
+            executable='mvp_c2_serial_comm',
+            name = 'reporter_c2_serial_comm',
             output='screen',
             prefix=['stdbuf -o L'],
             parameters=[reporter_setting_file],
@@ -40,6 +26,20 @@ def generate_launch_description():
                 ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
             ]
         ),
+        #udp
+        # Node(
+        #     package = 'mvp_c2',
+        #     namespace = robot_name,
+        #     executable='mvp_c2_udp_comm',
+        #     name = 'reporter_c2_udp_comm',
+        #     output='screen',
+        #     prefix=['stdbuf -o L'],
+        #     parameters=[reporter_setting_file],
+        #     remappings=[
+        #         ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
+        #         ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
+        #     ]
+        # ),
         #DCCL reporter node
         Node(
             package = 'mvp_c2',

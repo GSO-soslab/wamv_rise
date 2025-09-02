@@ -15,25 +15,11 @@ def generate_launch_description():
 
     return LaunchDescription([
         
-        # Node(
-        #     package = 'mvp_c2',
-        #     namespace = 'commander',
-        #     executable='mvp_c2_serial_comm',
-        #     name = 'commander_c2_serial_comm',
-        #     output='screen',
-        #     prefix=['stdbuf -o L'],
-        #     parameters=[topside_setting_file],
-        #     remappings=[
-        #         ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
-        #         ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
-        #     ]
-        # ),
-
         Node(
             package = 'mvp_c2',
-            namespace = robot_name,
-            executable='mvp_c2_udp_comm',
-            name = 'commander_c2_udp_comm',
+            namespace = 'commander',
+            executable='mvp_c2_serial_comm',
+            name = 'commander_c2_serial_comm',
             output='screen',
             prefix=['stdbuf -o L'],
             parameters=[topside_setting_file],
@@ -42,6 +28,20 @@ def generate_launch_description():
                 ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
             ]
         ),
+
+        # Node(
+        #     package = 'mvp_c2',
+        #     namespace = robot_name,
+        #     executable='mvp_c2_udp_comm',
+        #     name = 'commander_c2_udp_comm',
+        #     output='screen',
+        #     prefix=['stdbuf -o L'],
+        #     parameters=[topside_setting_file],
+        #     remappings=[
+        #         ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
+        #         ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
+        #     ]
+        # ),
     #commander node
         Node(
             package='mvp_c2',
