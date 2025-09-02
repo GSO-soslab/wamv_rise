@@ -53,10 +53,22 @@ def generate_launch_description():
         }.items()  
     ) 
 
+    # RCM motor
+    rcm = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/roboclaw_rcm.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'rcm_delay': '12.0'
+        }.items()  
+    ) 
+
 
     return LaunchDescription([
         foxglove,
         gpio,
         power,
         computer,
+        rcm,
     ])    
