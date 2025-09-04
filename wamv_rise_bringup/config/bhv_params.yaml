@@ -8,7 +8,7 @@ bhv_path_following:
   acceptance_radius: 3.0
   lookahead_distance: 3.0
   overshoot_timeout: 600.0
-  surge_velocity: 1.0
+  # surge_velocity: 1.0
   
   sigma: 0.00 #integral gain
   beta_gain: 0.0 #sideslip compensation gain
@@ -26,7 +26,8 @@ bhv_path_following:
 
   waypoint_x: [30.0, 0.0]
   waypoint_y: [0.0, 20.0]
-  waypoint_z: [4.0, 5.0]
+  waypoint_z: [0.0, 0.0]
+  waypoint_u: [0.5, 0.8]
 
   waypoint_file_package: wamv_rise_bringup
   waypoint_path: config/go_to_list/
