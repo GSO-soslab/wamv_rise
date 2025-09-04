@@ -32,14 +32,18 @@ def generate_launch_description():
         name="torqeedo_port",
         namespace=robot_name,
         output="screen",
+        # TODO: also remap the controller topic here ?
         remappings=[
             # ('control/speed_mode', '/wamv/joy_mode'),
             # ('control/joy_speed', '/wamv/port_thruster'),
 
             # ('control/speed_mode', '/wamv_rise/rf_joy/joy_mode'),
             # ('control/joy_speed', '/wamv_rise/rf_joy/port_thruster'),
-            ('torqeedo_port/control/speed_mode', 'rf_joy/joy_mode'),
-            ('torqeedo_port/control/joy_speed', 'rf_joy/port_thruster'),
+            # ('torqeedo_port/control/speed_mode', 'rf_joy/joy_mode'),
+            # ('torqeedo_port/control/joy_speed', 'rf_joy/port_thruster'),
+
+            ('torqeedo_port/control/joy', 'mvp_helm/bhv_teleop/joy'),
+            ('torqeedo_port/control/helm_state', 'mvp_helm/current_helm_state'),            
         ],
         parameters=[port_parameters_file],          
         emulate_tty=True
@@ -53,8 +57,10 @@ def generate_launch_description():
         namespace=robot_name,
         output="screen",
         remappings=[
-            ('torqeedo_stbd/control/speed_mode', 'rf_joy/joy_mode'),
-            ('torqeedo_stbd/control/joy_speed', 'rf_joy/starboard_thruster'),
+            # ('torqeedo_stbd/control/speed_mode', 'rf_joy/joy_mode'),
+            # ('torqeedo_stbd/control/joy_speed', 'rf_joy/starboard_thruster'),
+            ('torqeedo_stbd/control/joy', 'mvp_helm/bhv_teleop/joy'),
+            ('torqeedo_stbd/control/helm_state', 'mvp_helm/current_helm_state'),               
         ],
         parameters=[stbd_parameters_file],
         emulate_tty=True

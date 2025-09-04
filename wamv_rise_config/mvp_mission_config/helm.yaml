@@ -24,7 +24,7 @@ finite_state_machine:
     # max_duration: 100
     # exit_state: start
 
-  manual_teleop::
+  manual_teleop:
     control_mode: idle
     transitions: [start, survey, teleop, kill] 
 

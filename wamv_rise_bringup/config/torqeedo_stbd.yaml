@@ -21,3 +21,16 @@
 
     ROS:
       frame_id: wamv_rise/torqeedo_starboard
+
+      # brief: the HELM state that let thruster listen to controller commands
+      #        the name should be same as the state defined in 'finite_state_machine' of helm.yaml
+      controller_state_names: [teleop, survey]
+
+      # brief: the HELM state that let thruster listen to joy commands
+      #        the name should be same as the state defined in 'finite_state_machine' of helm.yaml      
+      manual_state_names: [manual_teleop]
+
+      # brief: the joy axes (index) used to control the thruster speed
+      # No.2 of the axis for port: index = 1
+      # No.4 of the axis for stbd, index = 3
+      joy_axes: 3
