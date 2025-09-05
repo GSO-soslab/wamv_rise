@@ -21,7 +21,7 @@ def generate_launch_description():
     )
 
     # Xsens AHRS node
-    node = Node(
+    xsens_node = Node(
         package='xsens_mti_ros2_driver',
         executable='xsens_mti_node',
         name='xsens_ahrs',
@@ -55,6 +55,6 @@ def generate_launch_description():
         # Delay the node if needed
         TimerAction(
             period=PythonExpression([xsens_delay]),
-            actions=[node]
+            actions=[xsens_node]
         ),
     ])

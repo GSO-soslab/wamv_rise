@@ -60,8 +60,8 @@
     # twist0_queue_size: 3
     # twist0_rejection_threshold: 2.0
 
-    #GPS
-    odom0: gps/odometry
+    #GPS - unicore
+    odom0: unicore_rtk/gps_odometry
     odom0_config: [true,  true,  false,
                    false, false, false,
                    false, false, false,
@@ -104,6 +104,36 @@
     odom2_pose_use_child_frame: true
     odom2_pose_rejection_threshold: 5.0
     odom2_twist_rejection_threshold: 1.0
+
+    #GPS - xsens
+    odom3: xsens_ahrs/gps_odometry
+    odom3_config: [true,  true,  false,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    odom3_queue_size: 10
+    odom3_nodelay: true
+    odom3_differential: false
+    odom3_relative: false
+    odom3_pose_use_child_frame: true
+    odom3_pose_rejection_threshold: 10.0
+    odom3_twist_rejection_threshold: 1.0
+
+    #GPS - airmar
+    # odom4: airmar/gps_odometry
+    # odom4_config: [true,  true,  false,
+    #                false, false, false,
+    #                false, false, false,
+    #                false, false, false,
+    #                false, false, false]
+    # odom4_queue_size: 10
+    # odom4_nodelay: true
+    # odom4_differential: false
+    # odom4_relative: false
+    # odom4_pose_use_child_frame: true
+    # odom4_pose_rejection_threshold: 10.0
+    # odom4_twist_rejection_threshold: 1.0    
 
     # [ADVANCED]  The EKF and UKF models follow a standard predict/correct cycle. During prediction, if there is no
     # acceleration reference, the velocity at time t+1 is simply predicted to be the same as the velocity at time t. During

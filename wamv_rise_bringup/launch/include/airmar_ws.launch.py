@@ -20,8 +20,8 @@ def generate_launch_description():
         'config/airmar_ws.yaml'
     )
 
-    # Nortek DVL node
-    node = Node(
+    # Airmar node
+    airmar_node = Node(
         package='airmar_weatherstation',
         executable='airmar_ws_driver_node',
         name='airmar_ws',
@@ -45,6 +45,6 @@ def generate_launch_description():
         # Delay the node if needed
         TimerAction(
             period=PythonExpression([airmar_delay]),
-            actions=[node]
+            actions=[airmar_node]
         ),
     ])
