@@ -1,2 +1,0 @@
-SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", ATTRS{serial}=="D30EZTPA", SYMLINK+="holybro_rf"
-
