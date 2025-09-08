@@ -8,6 +8,12 @@ def generate_launch_description():
 
     robot_name = 'wamv_rise'
 
+    # Zenoh
+    zenoh = ExecuteProcess(
+            cmd=['ros2', 'run', 'rmw_zenoh_cpp', 'rmw_zenohd'],
+            output='screen'
+    )        
+
     # Livox Lidar
     livox = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -42,7 +48,8 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
+        zenoh,
         livox,
         velodyne,
-        norbit,
+        # norbit,
     ])
