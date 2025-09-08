@@ -50,6 +50,7 @@ def generate_launch_description():
             prefix=['stdbuf -o L'],
             parameters=[reporter_setting_file],
             remappings=[
+                ('local/altimeter', 'nortek_dvl/bt_altitude'),
                 ('local/odometry', 'odometry/filtered'),
                 ('local/geopose', 'odometry/geopose'),
                 ('joy', 'mvp_helm/bhv_teleop/joy'),
