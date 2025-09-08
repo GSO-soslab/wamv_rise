@@ -64,7 +64,7 @@ def generate_launch_description():
                 {'autorepeat_rate': 5.0}
             ],
             remappings=[
-                ('joy', 'remote/id_2/joy'),
+                ('joy', 'remote/id_12/joy'),
             ]   
         ),
     ])
