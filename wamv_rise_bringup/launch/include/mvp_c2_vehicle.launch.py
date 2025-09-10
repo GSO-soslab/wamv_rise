@@ -55,8 +55,11 @@ def generate_launch_description():
                 ('local/geopose', 'odometry/geopose'),
                 ('joy', 'mvp_helm/bhv_teleop/joy'),
                 ('mvp_helm/path', 'bhv_path_following/get_next_waypoints'),
-                ('mvp_helm/set_waypoints', 'bhv_path_following/update_waypoints')
+                ('mvp_helm/set_waypoints', 'bhv_path_following/update_waypoints'),
+                ('local/power_monitor', 'power_monitor/power_monitor'),
+                ('local/computer_info', 'pi/computer_info')
             ]
         ),
 
     ])
+

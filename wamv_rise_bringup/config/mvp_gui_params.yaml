@@ -19,8 +19,8 @@ flask_node:
         yellow: 3.0
         red: 1.0        
       voltage:
-        yellow: 18.0 # volts, lower is worse
-        red: 16.0    # volts, lower is worse
+        yellow: 20.0 # volts, lower is worse
+        red: 18.0    # volts, lower is worse
       current:
         yellow: 10.0 # amps, higher is worse
         red: 15.0    # amps, higher is worse
