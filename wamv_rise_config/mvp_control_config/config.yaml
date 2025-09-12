@@ -2,8 +2,8 @@ control_modes:
   idle: false
 
   flight:
-    u:    {p: 100.0,   i: 15.0,   d: 1.0,   pid_max: 550.0, pid_min: -550.0}
-    yaw:      {p: 100.0,   i: 1.0,   d: 25.0,  pid_max: 300.0, pid_min: -300.0}    
+    u:    {p: 100.0,   i: 20.0,   d: 1.0,   pid_max: 600.0, pid_min: -600.0}
+    yaw:      {p: 100.0,   i: 1.0,   d: 25.0,  pid_max: 400.0, pid_min: -400.0}    
 
 ##
 # THRUSTERS

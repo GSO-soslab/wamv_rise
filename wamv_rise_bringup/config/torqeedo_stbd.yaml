@@ -16,8 +16,8 @@
 
     System:
       safety_timeout: 2
-      scale: 0.2
-      # scale: 0.4
+      # scale: 0.2
+      scale: 0.4
 
     ROS:
       frame_id: wamv_rise/torqeedo_starboard

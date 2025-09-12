@@ -21,3 +21,11 @@ network:
       addresses: [192.168.2.91/24]
 
 ```
+
+## PI5 SSD setup
+```sh
+# change the ownership
+sudo chown -R mvp_admin:mvp_admin /home/mvp_admin/ssd/
+# check
+touch /home/mvp_admin/ssd/test.txt
+```
