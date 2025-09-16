@@ -52,6 +52,17 @@ def generate_launch_description():
         }.items()  
     ) 
 
+    # USB GPS
+    usb_gps = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/gpsd_usb_gps.launch.py')]),
+        # launch_arguments={
+        #     'robot_name': robot_name,
+        #     'gps_delay': '9.0'
+        # }.items()  
+    )     
+
     # Evologics USBL
 
     return LaunchDescription([
@@ -59,4 +70,5 @@ def generate_launch_description():
         unicore,
         nortek,
         airmar,
+        usb_gps,
     ])

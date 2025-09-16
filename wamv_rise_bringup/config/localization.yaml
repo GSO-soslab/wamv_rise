@@ -106,19 +106,19 @@
     odom2_twist_rejection_threshold: 1.0
 
     #GPS - xsens
-    odom3: xsens_ahrs/gps_odometry
-    odom3_config: [true,  true,  false,
-                   false, false, false,
-                   false, false, false,
-                   false, false, false,
-                   false, false, false]
-    odom3_queue_size: 10
-    odom3_nodelay: true
-    odom3_differential: false
-    odom3_relative: false
-    odom3_pose_use_child_frame: true
-    odom3_pose_rejection_threshold: 10.0
-    odom3_twist_rejection_threshold: 1.0
+    # odom3: xsens_ahrs/gps_odometry
+    # odom3_config: [true,  true,  false,
+    #                false, false, false,
+    #                false, false, false,
+    #                false, false, false,
+    #                false, false, false]
+    # odom3_queue_size: 10
+    # odom3_nodelay: true
+    # odom3_differential: false
+    # odom3_relative: false
+    # odom3_pose_use_child_frame: true
+    # odom3_pose_rejection_threshold: 10.0
+    # odom3_twist_rejection_threshold: 1.0
 
     #GPS - airmar
     # odom4: airmar/gps_odometry
@@ -185,9 +185,9 @@
     # both full specification or specification of only the diagonal values.
 
     ### set larger value for trusted sensor measurements
-    process_noise_covariance: [ 0.01,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
-                                0.0,    0.01,   0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
-                                0.0,    0.0,    0.01,   0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    process_noise_covariance: [ 0.0001,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                0.0,    0.0001,   0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+                                0.0,    0.0,    0.1,   0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
                                 0.0,    0.0,    0.0,    1e-1,   0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
                                 0.0,    0.0,    0.0,    0.0,    1e-1,   0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
                                 0.0,    0.0,    0.0,    0.0,    0.0,    1e-1,   0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,

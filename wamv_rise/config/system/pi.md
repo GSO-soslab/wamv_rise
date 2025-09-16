@@ -5,14 +5,16 @@
 sudo apt install gpsd gpsd-clients pps-tools chrony
 ```
 - copy the following to the file: `/etc/default/gpsd`
+**UDP Version**
 ```sh
 # Devices gpsd should collect to at boot time.
 # They need to be read/writeable, either by user gpsd or the group dialout.
 
 # Start at boot time
 START_DAEMON="true"
-# Get the data from UDP, which from airmar ros driver
+# For UDP, which from airmar ros driver
 DEVICES="udp://127.0.0.1:5005"
+
 # Other options you want to pass to gpsd
 GPSD_OPTIONS="-n"
 ```
@@ -23,6 +25,26 @@ sudo systemctl restart gpsd
 # check data
 cgps -s
 ```
+
+**USB serial Version**
+```sh
+# Devices gpsd should collect to at boot time.
+# They need to be read/writeable, either by user gpsd or the group dialout.
+
+# Start at boot time
+START_DAEMON="true"
+
+USBAUTO="true"
+
+DEVICES="/dev/usb_gps"
+
+# Other options you want to pass to gpsd
+GPSD_OPTIONS="-n"
+
+BAUDRATE="9600"
+```
+
+
 - copy following to the file `/etc/chrony/chrony.conf`:
 ```sh
 ### /etc/chrony/chrony.conf ###

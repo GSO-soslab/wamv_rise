@@ -1,0 +1,7 @@
+# /wamv_rise/gpsd_client:
+/**:
+  ros__parameters:
+    use_gps_time: false
+    check_fix_by_variance: false
+    frame_id: wamv_rise/usb_gps
+    publish_rate: 1

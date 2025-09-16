@@ -1,7 +1,7 @@
 # check USB device
 ```sh
 # give you detail info for the USB device
-lsusb -v
+lsusb -v | grep -A 10 "U-Blox"
 
 # make a rules
 cd /etc/udev/rules.d

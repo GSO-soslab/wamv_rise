@@ -15,3 +15,6 @@
     position_accuracy: 3.0
     mag_declination_auto: false
     use_depth_for_tf: true
+    datum_manual_start: false
+
+    manual_position_covariance: 1.0

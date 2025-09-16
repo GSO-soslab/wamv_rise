@@ -29,7 +29,9 @@ def generate_launch_description():
         namespace=robot_name,
         parameters=[parameters_file],
         arguments=[],
-        emulate_tty=True
+        emulate_tty=True,
+        respawn=True, 
+        respawn_delay=2.0         
     )
     
     return LaunchDescription([
