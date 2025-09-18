@@ -2,8 +2,8 @@ control_modes:
   idle: false
 
   flight:
-    u:    {p: 100.0,   i: 20.0,   d: 1.0,   pid_max: 600.0,  pid_min: -600.0}
-    yaw:  {p: 100.0,   i: 5.0,    d: 25.0,  pid_max: 500.0,  pid_min: -500.0}    
+    u:    {p: 100.0,   i: 20.0,   d: 2.0,   pid_max: 650.0,  pid_min: -650.0}
+    yaw:  {p: 150.0,   i: 10.0,   d: 10.0,  pid_max: 500.0,  pid_min: -500.0}    
 
 ##
 # THRUSTERS
@@ -14,7 +14,7 @@ thruster_ids:
     command_topic: torqeedo_port/control/controller_speed
     force_topic: control/force/port_thruster
     limits: [-400.0, 400.0]
-    delta_limit: 10.0
+    delta_limit: 15.0
     polynomials: [0.0, 439.65, 0.0, 1015.8]
 
   starboard:
@@ -22,7 +22,7 @@ thruster_ids:
     command_topic: torqeedo_stbd/control/controller_speed
     force_topic: control/force/starboard_thruster
     limits: [-400.0, 400.0]
-    delta_limit: 10.0
+    delta_limit: 15.0
     polynomials: [0.0, 439.65, 0.0, 1015.8]
 
 # Polynomials for each thruster.

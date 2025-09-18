@@ -64,25 +64,6 @@ def generate_launch_description():
     )
 
     # Other GPS odometry 
-    # airmar_gps_node = Node(
-    #     package='mvp_localization_utilities',
-    #     executable='gps_world_odom_publisher',
-    #     name='airmar_gps_world_odom_publisher',
-    #     namespace=robot_name,
-    #     output='screen',
-    #     prefix=['stdbuf -o L'],
-    #     parameters=[
-    #         {'tf_prefix': robot_name},
-    #         {'gps_frame': 'airmar_gps'},
-    #         {'acceptable_var': 10.0}, 
-    #         {'manual_position_covariance': 6.5}    
-    #         ],
-    #     remappings=[
-    #             ('gps/fix', 'airmar/gps_fix'),
-    #             ('gps/world_odometry', 'airmar/gps_odometry'),
-    #         ],
-    #     emulate_tty=True
-    # )
 
     # xsens_gps_node = Node(
     #     package='mvp_localization_utilities',
@@ -102,7 +83,27 @@ def generate_launch_description():
     #             ('gps/world_odometry', 'xsens_ahrs/gps_odometry'),
     #         ],
     #     emulate_tty=True
-    # )  
+    # ) 
+
+    # airmar_gps_node = Node(
+    #     package='mvp_localization_utilities',
+    #     executable='gps_world_odom_publisher',
+    #     name='airmar_gps_world_odom_publisher',
+    #     namespace=robot_name,
+    #     output='screen',
+    #     prefix=['stdbuf -o L'],
+    #     parameters=[
+    #         {'tf_prefix': robot_name},
+    #         {'gps_frame': 'airmar_gps'},
+    #         {'acceptable_var': 10.0}, 
+    #         {'manual_position_covariance': 6.5}    
+    #         ],
+    #     remappings=[
+    #             ('gps/fix', 'airmar/gps_fix'),
+    #             ('gps/world_odometry', 'airmar/gps_odometry'),
+    #         ],
+    #     emulate_tty=True
+    # ) 
 
     return LaunchDescription([
 
@@ -128,11 +129,11 @@ def generate_launch_description():
 
         # TimerAction(
         #     period=PythonExpression([localization_delay]),
-        #     actions=[airmar_gps_node]
-        # ), 
+        #     actions=[xsens_gps_node]
+        # ),  
 
         # TimerAction(
         #     period=PythonExpression([localization_delay]),
-        #     actions=[xsens_gps_node]
-        # ),                      
+        #     actions=[airmar_gps_node]
+        # ),                     
     ])
