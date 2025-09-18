@@ -16,8 +16,8 @@
 
     System:
       safety_timeout: 2
-      # scale: 0.2
-      scale: 0.4
+      scale: 0.2
+      # scale: 0.4
 
     ROS:
       frame_id: wamv_rise/torqeedo_port
@@ -34,3 +34,6 @@
       # No.2 of the axis for port: index = 1
       # No.4 of the axis for stbd, index = 3
       joy_axes: 1
+
+      # brief: the joy button(index) used to enable the control from joy 
+      joy_buttons: 4
