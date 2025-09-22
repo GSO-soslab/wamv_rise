@@ -30,7 +30,8 @@
             rate: 5
             # 
             # voltage_ratio: 0.090082
-            voltage_ratio: 0.0625
+            # voltage_ratio: 0.0625
+            voltage_ratio: 0.0837
 
             # 
             voltage_warn: 21.0        
