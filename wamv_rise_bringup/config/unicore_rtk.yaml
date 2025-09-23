@@ -11,6 +11,10 @@
         # True: use the gps timestamp, False: use IO time when gps message arrived
         use_gnss_time: True
 
+        # True: send NMEA string to GPSD, use '127.0.0.1' by default
+        use_gpsd_udp: True
+        virtual_port: 5006
+
         # True: it will print some debug msg for each sentence
         # False: logger used as INFO
         debug: False

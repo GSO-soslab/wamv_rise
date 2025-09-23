@@ -12,7 +12,9 @@ sudo apt install gpsd gpsd-clients pps-tools chrony
 
 # Start at boot time
 START_DAEMON="true"
-# For UDP, which from airmar ros driver
+# For the GPS ros driver to send NMEA string to GPSD through UDP
+# 5005 port for airmar weatherstation
+# 5006 port for unicore RTK GPS
 DEVICES="udp://127.0.0.1:5005"
 
 # Other options you want to pass to gpsd
@@ -20,6 +22,8 @@ GPSD_OPTIONS="-n"
 ```
 - check:
 ```sh
+# check udp data
+nc -u -l 127.0.0.1 5005
 # restart
 sudo systemctl restart gpsd
 # check data
