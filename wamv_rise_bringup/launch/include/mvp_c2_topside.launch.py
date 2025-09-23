@@ -60,7 +60,7 @@ def generate_launch_description():
             namespace=robot_name,
             output="screen",
             parameters=[
-                # {'coalesce_interval': 10},
+                {'coalesce_interval': 10},
                 {'autorepeat_rate': 5.0}
             ],
             remappings=[
