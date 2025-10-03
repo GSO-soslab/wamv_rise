@@ -102,3 +102,16 @@ rosservice call /wamv_rise/gpio_manager/set_power_jetson_board "data: false"
 # shut down pi
 sudo shutdown -P now
 ```
+
+
+**Setup RSM:**
+```sh
+# Going Down
+ros2 service call /wamv_rise/roboclaw/going_down std_srvs/srv/SetBool "{data: true}"
+
+# Going Up
+ros2 service call /wamv_rise/roboclaw/going_up std_srvs/srv/SetBool "{data: true}" 
+
+# Stop
+ros2 service call /wamv_rise/roboclaw/stop std_srvs/srv/SetBool "{data: true}"
+```
