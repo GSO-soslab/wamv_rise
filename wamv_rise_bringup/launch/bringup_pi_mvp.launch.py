@@ -30,7 +30,14 @@ def generate_launch_description():
         }.items()  
     )
 
+    acomm_util = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'),
+            'launch/include/test_acomm_utilities.launch.py')]),
+    )
+
     return LaunchDescription([
         control,
         mission,
+        acomm_util
     ])

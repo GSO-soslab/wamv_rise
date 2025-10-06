@@ -64,6 +64,11 @@ def generate_launch_description():
     )     
 
     # Evologics USBL
+    usbl = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'),
+            'launch/include/evologics_usbl.launch.py')]),
+    )
 
     return LaunchDescription([
         xsens,
@@ -71,4 +76,5 @@ def generate_launch_description():
         nortek,
         airmar,
         usb_gps,
+        usbl
     ])

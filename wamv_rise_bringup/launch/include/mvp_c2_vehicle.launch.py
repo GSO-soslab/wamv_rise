@@ -57,7 +57,8 @@ def generate_launch_description():
                 ('mvp_helm/path', 'bhv_path_following/get_next_waypoints'),
                 ('mvp_helm/set_waypoints', 'bhv_path_following/update_waypoints'),
                 ('local/power_monitor', 'power_monitor/power_monitor'),
-                ('local/computer_info', 'pi/computer_info')
+                ('local/computer_info', 'pi/computer_info'),
+                ('local/acomm_geopoint', 'acomm_geopoint'),
             ],
             emulate_tty=True 
         ),
