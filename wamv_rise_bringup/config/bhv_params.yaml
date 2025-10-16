@@ -5,7 +5,7 @@ bhv_path_following:
 
   state_done: start
   state_fail: kill
-  acceptance_radius: 3.0
+  acceptance_radius: 5.0
   lookahead_distance: 5.0
   overshoot_timeout: 600.0
   # surge_velocity: 1.0
@@ -17,11 +17,12 @@ bhv_path_following:
   pitch_assist_band: 0.5
   max_pitch: 0.35
 
-  lookahead_adaptive_flag: false
+  lookahead_adaptive_flag: true
   lookahead_max: 8.0
   lookahead_min: 2.0
   lookahead_gamma: 1.0
-  turning_surge_velocity: 0.3
+
+  turning_surge_velocity: 0.5
   turning_angle_sector: 1.0
 
   waypoint_x: [30.0, 0.0]

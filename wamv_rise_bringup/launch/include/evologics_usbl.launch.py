@@ -38,7 +38,10 @@ def generate_launch_description():
                         parameters=[
                             evologics_param_file,
                             goby_param_file
-                        ]
+                        ],
+                        remappings=[
+                                ('usbl/fix', 'usbl_data'),
+                            ],                        
                     )
             ])
         
