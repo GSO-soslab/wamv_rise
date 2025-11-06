@@ -13,8 +13,8 @@
 
 /wamv_rise/reporter_c2_serial_comm:
   ros__parameters:
-    # port: /dev/vehicle_rf
-    port: /dev/ttyUSB4
+    # port: /dev/ttyUSB4
+    port: /dev/vehicle_rf
     baudrate: 57600
 
 # /wamv_rise/reporter_c2_udp_comm:
@@ -42,9 +42,8 @@
 
 /wamv_rise/commander_c2_serial_comm:
   ros__parameters:
-    # port: /dev/topside_rf
-    # baudrate: 115200
-    port: /dev/ttyUSB0
+    # port: /dev/ttyUSB0
+    port: /dev/topside_rf
     baudrate: 57600
 
 # /wamv_rise/commander_c2_udp_comm:
