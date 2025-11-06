@@ -32,4 +32,11 @@ udevadm info -q property -n /dev/ttyUSB4 | grep ID_USB_MODEL_ID
 udevadm info -q property -n /dev/ttyUSB4 | grep ID_USB_SERIAL_SHORT
 
 # cpoy the rules
+cd ~/Your_workspace/wamv_rise/wamv_rise/config/udev
+sudo cp 99-{NAME}.rules /etc/udev/rules.d
+
+# enable the new rules
+sudo udevadm control --reload-rules  
+sudo service udev restart 
+sudo udevadm trigger
 ```
