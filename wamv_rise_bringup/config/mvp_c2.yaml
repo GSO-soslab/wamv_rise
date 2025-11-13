@@ -15,7 +15,7 @@
   ros__parameters:
     # port: /dev/ttyUSB4
     port: /dev/vehicle_rf
-    baudrate: 57600
+    baudrate: 115200
 
 # /wamv_rise/reporter_c2_udp_comm:
 #   ros__parameters:
@@ -44,7 +44,7 @@
   ros__parameters:
     # port: /dev/ttyUSB0
     port: /dev/topside_rf
-    baudrate: 57600
+    baudrate: 115200
 
 # /wamv_rise/commander_c2_udp_comm:
 #   ros__parameters:

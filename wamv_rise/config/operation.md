@@ -117,9 +117,16 @@ ros2 service call /wamv_rise/roboclaw/stop std_srvs/srv/SetBool "{data: true}"
 ```
 
 
+**Set Unicore**
 ```sh
 ros2 topic pub /wamv_rise/unicore_rtk/tx_cmd std_msgs/msg/String "data: 'CONFIG HEADING FIXLENGTH'" --once
 
 # reset data processing and restart 
 ros2 topic pub /wamv_rise/unicore_rtk/tx_cmd std_msgs/msg/String "data: 'RESET ALL'" --once
+```
+
+**Data transfer**
+```sh
+# check data size
+
 ```

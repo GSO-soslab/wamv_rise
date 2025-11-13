@@ -73,7 +73,7 @@ def generate_launch_description():
     return LaunchDescription([
         xsens,
         unicore,
-        # nortek,
+        nortek,
         airmar,
         usb_gps,
         # usbl
