@@ -8,8 +8,8 @@
     launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
     launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']
     gpio_devices: [underwater_payload, jetson_board, norbit]  # this needs to match the gpio manager yaml
-    local_id: 12
-    remote_id: 11
+    local_id: 4
+    remote_id: 3
 
 /wamv_rise/reporter_c2_serial_comm:
   ros__parameters:
@@ -38,8 +38,8 @@
     launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
     launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']
     gpio_devices: [underwater_payload, jetson_board, norbit]  # this needs to match the gpio manager yaml
-    local_id: 11
-    remote_id: 12
+    local_id: 3
+    remote_id: 4
 
 /wamv_rise/commander_c2_serial_comm:
   ros__parameters:
