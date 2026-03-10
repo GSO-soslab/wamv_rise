@@ -30,7 +30,8 @@ def generate_launch_description():
         parameters=[parameters_file], 
         arguments=[],
         emulate_tty=True,
-        # remappings=[('ext/heading_enu', 'unicore_rtk_driver/heading_enu_pose')]        
+        # remappings=[('ext/heading_enu', 'unicore_rtk_driver/heading_enu_pose')],        
+        # remappings=[('ext/heading_enu', 'unicore_rtk/heading_enu_pose')],        
         # respawn=True, 
         # respawn_delay=2.0                 
     )

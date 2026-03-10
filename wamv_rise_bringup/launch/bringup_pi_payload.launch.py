@@ -8,14 +8,25 @@ def generate_launch_description():
 
     robot_name = 'wamv_rise'
 
-    # Xsens AHRS
-    xsens = IncludeLaunchDescription(
+    # # Xsens AHRS
+    # xsens = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource([
+    #         os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+    #         'launch/include/xsens_ahrs.launch.py')]),
+    #     launch_arguments={
+    #         'robot_name': robot_name,
+    #         'xsens_delay': '0.0'
+    #     }.items()  
+    # )
+
+    # Microstrain AHRS
+    microstrain = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'), 
-            'launch/include/xsens_ahrs.launch.py')]),
+            'launch/include/microstrain_ahrs.launch.py')]),
         launch_arguments={
             'robot_name': robot_name,
-            'xsens_delay': '0.0'
+            'microstrain_delay': '0.0'
         }.items()  
     )
 
@@ -71,10 +82,10 @@ def generate_launch_description():
     )
 
     return LaunchDescription([
-        xsens,
+        microstrain,
         unicore,
-        nortek,
-        airmar,
+        # nortek,
+        # airmar,
         usb_gps,
         # usbl
     ])

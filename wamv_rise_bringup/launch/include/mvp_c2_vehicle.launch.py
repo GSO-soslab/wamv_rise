@@ -10,7 +10,8 @@ def generate_launch_description():
     robot_name = 'wamv_rise'
     robot_bringup = robot_name + '_bringup'
     reporter_setting_file = os.path.join(get_package_share_directory(robot_bringup), 'config', 'mvp_c2.yaml') 
-    
+    reporter_traffic_manager_file = os.path.join(get_package_share_directory(robot_bringup), 'config', 'mvp_c2_reporter_traffic.yaml') 
+
     return LaunchDescription([
         # serial_comm
         Node(
@@ -21,9 +22,13 @@ def generate_launch_description():
             output='screen',
             prefix=['stdbuf -o L'],
             parameters=[reporter_setting_file],
+            # remappings=[
+            #     ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
+            #     ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
+            # ]
             remappings=[
-                ('dccl_msg_tx', 'mvp_c2/dccl_msg_tx'),
-                ('dccl_msg_rx', 'mvp_c2/dccl_msg_rx'),
+                    ('dccl_msg_tx', 'mvp_c2/traffic_control/dccl_msg_controlled_tx'),
+                    ('dccl_msg_rx', 'mvp_c2/traffic_control/dccl_msg_rx'),
             ]
         ),
         #udp
@@ -59,8 +64,20 @@ def generate_launch_description():
                 ('local/power_monitor', 'power_monitor/power_monitor'),
                 ('local/computer_info', 'pi/computer_info'),
                 ('local/acomm_geopoint', 'acomm_geopoint'),
+                ('mvp_c2/reporter/dccl_msg_tx', 'mvp_c2/traffic_control/dccl_msg_tx'), # new traffic manager
+                ('mvp_c2/reporter/dccl_msg_rx', 'mvp_c2/traffic_control/dccl_msg_controlled_rx'), # new traffic manager
             ],
             emulate_tty=True 
+        ),
+        # traffic manager
+        Node(
+            package='mvp_c2',
+            namespace=robot_name,
+            executable='mvp_c2_traffic_control_ros',
+            name='mvp_c2_traffic_control',
+            output='screen',
+            prefix=['stdbuf -o L'],
+            parameters=[reporter_traffic_manager_file],
         ),
 
     ])
