@@ -24,7 +24,7 @@
 
       # brief: the HELM state that let thruster listen to controller commands
       #        the name should be same as the state defined in 'finite_state_machine' of helm.yaml
-      controller_state_names: [teleop, survey]
+      controller_state_names: [start, teleop, survey]
 
       # brief: the HELM state that let thruster listen to joy commands
       #        the name should be same as the state defined in 'finite_state_machine' of helm.yaml      

@@ -48,9 +48,21 @@ def generate_launch_description():
         }.items()  
     )
 
+    # DWE Camera
+    camera = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/camera.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'camera_delay': '9.0'
+        }.items()  
+    )
+    
     return LaunchDescription([
         zenoh,
         livox,
         velodyne,
         norbit,
+        camera
     ])
