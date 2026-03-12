@@ -5,6 +5,7 @@ from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
 from launch.actions import TimerAction
 from launch.substitutions import PythonExpression
+from pathlib import Path
 
 def generate_launch_description():
     """
@@ -16,10 +17,18 @@ def generate_launch_description():
     robot_name = LaunchConfiguration('robot_name')
     camera_delay = LaunchConfiguration('camera_delay')
     
-    # The package name is 'dwe_camera' as defined in setup.py
-    robot_param_path = get_package_share_directory(robot_bringup)
-
-    dual_camera_params_path = os.path.join(robot_param_path, 'config', 'dwe_stellar_camera.yaml')
+    # Camera parameters
+    camera_params_path = Path(
+        get_package_share_directory('wamv_rise_bringup'), 
+        'config/dwe_camera_stellar.yaml')
+    
+    camera_control_params_path = Path(
+        get_package_share_directory('wamv_rise_bringup'), 
+        'config/dwe_camera_hardware_controls.yaml')
+    
+    camera_aux_params_path = Path(
+        get_package_share_directory('wamv_rise_bringup'), 
+        'config/dwe_camera_auxiliary_processors.yaml')
 
     camera_node = Node(
         package='dwe_camera_driver',
@@ -27,7 +36,11 @@ def generate_launch_description():
         name='camera_node',
         namespace=robot_name,
         output='screen',
-        parameters=[dual_camera_params_path],
+        parameters=[
+            camera_params_path,
+            camera_control_params_path,
+            camera_aux_params_path,
+        ]
     )
 
     return LaunchDescription([
