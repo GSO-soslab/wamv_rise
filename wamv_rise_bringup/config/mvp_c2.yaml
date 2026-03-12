@@ -4,6 +4,7 @@
 /wamv_rise/mvp_c2_reporter:
   ros__parameters:
     dccl_tx_interval: 1.0
+    dccl_rx_interval: 0.2
     helm_state_list: ['start', 'kill', 'teleop', 'survey', 'manual_teleop'] #this has to match the helm
     launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
     launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']

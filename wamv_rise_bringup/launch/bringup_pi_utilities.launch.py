@@ -70,5 +70,5 @@ def generate_launch_description():
         gpio,
         power,
         computer,
-        # rsm,
+        rsm,
     ])    

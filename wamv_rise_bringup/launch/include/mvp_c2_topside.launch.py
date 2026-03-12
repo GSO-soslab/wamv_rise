@@ -80,10 +80,10 @@ def generate_launch_description():
             output="screen",
             parameters=[
                 {'coalesce_interval': 10},
-                {'autorepeat_rate': 5.0}
+                {'autorepeat_rate': 2.0}
             ],
             remappings=[
-                ('joy', 'remote/id_12/joy'),
+                ('joy', 'remote/id_4/joy'),
             ]   
         ),
     ])

@@ -84,8 +84,8 @@ def generate_launch_description():
     return LaunchDescription([
         microstrain,
         unicore,
-        # nortek,
-        # airmar,
+        nortek,
+        airmar,
         usb_gps,
         # usbl
     ])
