@@ -74,11 +74,26 @@ def generate_launch_description():
         # }.items()  
     )     
 
-    # Evologics USBL
-    usbl = IncludeLaunchDescription(
+    # Evologics USBL Driver
+    usbl_driver = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(get_package_share_directory('wamv_rise_bringup'),
             'launch/include/evologics_usbl.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'usbl_driver_delay': '12.0'
+        }.items() 
+    )
+
+    # Evologics USBL Acomm Utilities
+    usbl_acomm = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'),
+            'launch/include/mvp_acomm_utilities.launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'usbl_acomm_delay': '15.0'
+        }.items() 
     )
 
     return LaunchDescription([
@@ -87,5 +102,6 @@ def generate_launch_description():
         nortek,
         airmar,
         usb_gps,
-        # usbl
+        usbl_driver,
+        usbl_acomm 
     ])

@@ -24,9 +24,15 @@
         - "ReportHelm"
         - "ReportWpt"
         - "ReportRosLaunch"
+        - "AcommGeoPoint"
 
     # --- Message Specific Rules ---
     message_rules:
+
+      AcommGeoPoint:
+        priority: 11
+        ttl_seconds: 100
+        
       ReportController:
         priority: 10
         ttl_seconds: 100
