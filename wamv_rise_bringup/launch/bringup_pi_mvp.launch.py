@@ -39,5 +39,5 @@ def generate_launch_description():
     return LaunchDescription([
         control,
         mission,
-        acomm_util
+        # acomm_util
     ])

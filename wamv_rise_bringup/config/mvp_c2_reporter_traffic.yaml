@@ -2,7 +2,7 @@
   ros__parameters:
 
     max_frame_size: 200  #maximum size per transmission packet
-    tx_interval: 1.0
+    tx_interval: 0.5
     tdma_enable: False
 
     tdma:
@@ -11,8 +11,8 @@
 
     # --- Buffer Global Settings ---
     dynamic_buffer:
-      max_total_size: 150 # how many dccl message entries will be stored
-      overflow_remove_by_time: False
+      max_total_size: 300 # how many dccl message entries will be stored
+      overflow_remove_by_time: True
       dccl_intake_message_list: 
         - "Odometry"
         - "GeoPose"

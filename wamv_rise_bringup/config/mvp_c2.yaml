@@ -17,6 +17,7 @@
     # port: /dev/ttyUSB4
     port: /dev/vehicle_rf
     baudrate: 115200
+    send_chunks_flag: True
 
 # /wamv_rise/reporter_c2_udp_comm:
 #   ros__parameters:
@@ -34,7 +35,7 @@
 /wamv_rise/mvp_c2_commander:
   ros__parameters:
     dccl_tx_interval: 1.0
-    dccl_rx_interval: 0.5
+    dccl_rx_interval: 0.1
     helm_state_list: ['start', 'kill', 'teleop', 'survey', 'manual_teleop'] #this has to match the helm
     launch_packages: ['wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup', 'wamv_rise_bringup',  'wamv_rise_bringup']
     launch_files: ['bringup_pi_utilities', 'bringup_pi_thruster', bringup_pi_payload, 'bringup_pi_localization', 'bringup_pi_mvp']

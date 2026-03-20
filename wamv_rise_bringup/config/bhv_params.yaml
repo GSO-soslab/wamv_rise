@@ -17,12 +17,12 @@ bhv_path_following:
   pitch_assist_band: 0.5
   max_pitch: 0.35
 
-  lookahead_adaptive_flag: true
+  lookahead_adaptive_flag: false
   lookahead_max: 8.0
   lookahead_min: 2.0
   lookahead_gamma: 1.0
 
-  turning_surge_velocity: 0.3
+  turning_surge_velocity: 0.5
   turning_angle_sector: 1.0
 
   waypoint_x: [30.0, 0.0]
