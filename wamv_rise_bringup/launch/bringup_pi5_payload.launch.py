@@ -58,11 +58,23 @@ def generate_launch_description():
             'camera_delay': '9.0'
         }.items()  
     )
+
+    # Feature Points
+    featurepoints = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            os.path.join(get_package_share_directory('wamv_rise_bringup'), 
+            'launch/include/pointcloud_to_geopoints_launch.py')]),
+        launch_arguments={
+            'robot_name': robot_name,
+            'pc2gp_delay': '12.0'
+        }.items()  
+    )
     
     return LaunchDescription([
         zenoh,
         livox,
         velodyne,
         norbit,
-        camera
+        camera,
+        featurepoints
     ])

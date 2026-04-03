@@ -1,7 +1,7 @@
 /wamv_rise/mvp_c2_traffic_control:
   ros__parameters:
 
-    max_frame_size: 200  #maximum size per transmission packet
+    max_frame_size: 300  #maximum size per transmission packet
     tx_interval: 0.5
     tdma_enable: False
 
@@ -25,9 +25,13 @@
         - "ReportWpt"
         - "ReportRosLaunch"
         - "AcommGeoPoint"
+        - "FeatureGeoPoints"
 
     # --- Message Specific Rules ---
     message_rules:
+      FeatureGeoPoints:
+        priority: 12
+        ttl_seconds: 100
 
       AcommGeoPoint:
         priority: 11
