@@ -4,6 +4,8 @@ from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from ament_index_python.packages import get_package_share_directory, get_package_prefix
+from launch.actions import TimerAction
+from launch.substitutions import PythonExpression
 
 
 def generate_launch_description():
@@ -11,7 +13,7 @@ def generate_launch_description():
 
     # Node argument
     robot_name = LaunchConfiguration('robot_name')
-    pc2gp_delay = LaunchConfiguration('nortek_delay')
+    pc2gp_delay = LaunchConfiguration('pc2gp_delay')
 
     param_config = os.path.join(
         get_package_share_directory('wamv_rise_bringup'),
@@ -19,15 +21,9 @@ def generate_launch_description():
         'pointcloud_to_geopoints.yaml'
     )
 
-    executable_path = os.path.join(
-        get_package_prefix(package_name),
-        'bin',
-        package_name
-    )
-
     node = Node(
         package=package_name,
-        executable=executable_path,
+        executable='pointcloud_to_geopoints',
         name=package_name,
         namespace=robot_name,
         parameters=[param_config],
