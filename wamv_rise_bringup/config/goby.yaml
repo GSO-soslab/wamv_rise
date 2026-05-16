@@ -1,19 +1,39 @@
-/wamv_rise/evologics_ros_node:
+/**/**:
   ros__parameters:
     goby:
-      max_frame_bytes: 1000
-      mac_slot_time: 5
+      max_frame_bytes: 200
+      mac_slot_time: 10
       valid_depth: -1
 
       dynamic_buffer:
         #select the subbuffer_id(s) to load to the dynamic buffer
-        messages: ["ping"]
+        messages: ["dccl"]
 
         #buffer configuration (https://goby.software/3.0/md_doc101_acomms-queue.html)
-        ping:
+        dccl:
           ack: false
           blackout_time: 0
-          max_queue: 1
-          newest_first: true 
+          max_queue: 10
+          newest_first: false 
           ttl: 1800
           value_base: 1
+
+# /wamv_rise/evologics_ros_node:
+#   ros__parameters:
+#     goby:
+#       max_frame_bytes: 1000
+#       mac_slot_time: 5
+#       valid_depth: -1
+
+#       dynamic_buffer:
+#         #select the subbuffer_id(s) to load to the dynamic buffer
+#         messages: ["ping"]
+
+#         #buffer configuration (https://goby.software/3.0/md_doc101_acomms-queue.html)
+#         ping:
+#           ack: false
+#           blackout_time: 0
+#           max_queue: 1
+#           newest_first: true 
+#           ttl: 1800
+#           value_base: 1
