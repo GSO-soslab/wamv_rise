@@ -47,6 +47,13 @@
         <child link="nortek_dvl"/>
     </joint>
 
+    <link name="nortek_dvl_pressure"/>
+    <joint name="dvl_joint_pressure" type="fixed">
+        <origin xyz="-1.4352 0.0375 -0.909" rpy="0.0 0.0 -1.5707963"/>
+        <parent link="nose_tip_link"/>
+        <child link="nortek_dvl_pressure"/>
+    </joint>
+1
     <link name="usb_gps"/>
     <joint name="usb_gps_joint" type="fixed">
         <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
