@@ -53,7 +53,14 @@
         <parent link="nose_tip_link"/>
         <child link="nortek_dvl_pressure"/>
     </joint>
-1
+
+    <link name="airmar_link"/>
+    <joint name="airmar_joint" type="fixed">
+        <origin xyz="-1.4352 0.16 1.0" rpy="0.0 0.0 0.0"/>
+        <parent link="nose_tip_link"/>
+        <child link="airmar_link"/>
+    </joint>
+
     <link name="usb_gps"/>
     <joint name="usb_gps_joint" type="fixed">
         <origin xyz="-1.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
